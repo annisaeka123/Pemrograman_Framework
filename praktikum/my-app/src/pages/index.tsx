@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 
@@ -10,6 +11,8 @@ export default function Home() {
     <div>
       <h1>Praktikum Next.js Pages Router</h1> <br />
       <p>Annisa Mahasiswa D4 Pengembangan Web</p>
+      {/* Tugas 2 */}
+      <Link href="/about">About Annisa</Link> 
     </div>
   )
 }
