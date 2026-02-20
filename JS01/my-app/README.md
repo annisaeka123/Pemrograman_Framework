@@ -1,38 +1,125 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PEMROGRAMAN BERBASIS FRAMEWORK
 
-## Getting Started
+# JOBSHEET 1
 
-First, run the development server:
+# SETUP PROJECT NEXT.JS MENGGUNAKAN PAGES ROUTER
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```
+Disusun oleh:
+Nama: Annisa Eka Puspita
+Kelas: TI-3D
+Absen: 04
+NIM: 2341720131
+PRODI D-IV TEKNIK INFORMATIKA
+JURUSAN TEKNOLOGI INFORMASI
+POLITEKNIK NEGERI MALANG
+2026
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## A. Langkah Kerja Praktikum
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Langkah 1 – Pengecekan Lingkungan
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. Buka terminal / command prompt.
+2. Jalankan perintah berikut:
+3. `node -v`
+4. `npm -v`
+5. Pastikan Node.js dan npm sudah terinstal. Jika belum terinstall maka Install pada alamat berikut: https://nodejs.org/en/download
+6. `git -v`
+7. Jika belum install maka install pada alamat berikut: https://git-scm.com/install/windows
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Langkah 2 – Membuat Project Next.js
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Buat direktori baru dan masuk ke direktori kerja
+2. Jalankan perintah: `npx create-next-app@13.4.7`
+3. Kita menggunakan versi 13.4.7 bukan yang latest (`npx create-next-app@latest` nextjs-pages router) dan Tunggu hingga proses instalasi selesai.
+4. Masuk ke folder projectnya
+5. Tunggu hingga proses instalasi selesai.
 
-## Learn More
+### Langkah 3 – Menjalankan Server Development
 
-To learn more about Next.js, take a look at the following resources:
+1. Masuk ke folder project:
+2. Jalankan aplikasi: `npm run dev`
+3. Buka browser dan akses: http://localhost:3000
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Langkah 4 – Mengenal Struktur Folder
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `pages/` → tempat routing halaman
+- `public/` → aset statis
+- `styles/` → file CSS
+- `package.json` → konfigurasi project
+- `.gitignore` → file konfigurasi di Git yang berfungsi untuk memberitahu Git file atau folder apa saja yang TIDAK perlu di-track / di-commit ke repository.
 
-## Deploy on Vercel
+### Langkah 5 – Modifikasi Halaman Utama
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Buka file: `pages/index.js`
+2. Ubah isi halaman, misalnya:
+3. Simpan dan lihat perubahan di browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Langkah 6 – Modifikasi API
+
+1. Buka folder `api`
+2. Modifikasi `hello.ts`
+3. Jalankan browser dengan Alamat http://localhost:3000/api/hello
+4. Tambahkan extensions chrome
+5. Jalankan browser chrome
+
+### Langkah 7 – Modifikasi Background
+
+1. Buka file `_app.tsx`
+2. Modifikasi menjadi berikut
+3. Jalankan localhost
+
+### Langkah 8 – Setup ext pada VSCode (opsional)
+
+1. Auto Rename
+2. Console Ninja
+3. Windsurf Plugin
+
+## B. Tugas Praktikum
+
+### Tugas 1
+
+- Buat halaman baru `about.js` di folder `pages`.
+- Tampilkan:
+  - Nama Mahasiswa
+  - NIM
+  - Program Studi
+
+### Tugas 2
+
+- Tambahkan minimal 1 link navigasi dari halaman utama ke halaman about.
+
+### Hasil
+
+## C. Pertanyaan Refleksi
+
+1. **Mengapa Pages Router disebut sebagai routing berbasis file?**  
+   Pages Router disebut sebagai routing berbasis file karena sistem URL pada aplikasi ditentukan langsung dari struktur folder dan nama file di dalam folder pages.  
+   Setiap file yang dibuat di dalam folder pages otomatis menjadi sebuah route tanpa perlu konfigurasi tambahan.
+
+2. **Apa perbedaan Next.js dengan React standar (CRA)?**  
+   - Next.js mendukung SSR, SSG, dan CSR.
+   - Routing otomatis berbasis file.
+   - Lebih optimal untuk SEO.
+   - Mendukung API Routes.
+   - CRA hanya mendukung Client Side Rendering.
+
+3. **Apa fungsi perintah `npm run dev`?**  
+   Perintah `npm run dev` digunakan untuk menjalankan project dalam mode development.  
+   - Menjalankan server lokal.
+   - Biasanya diakses melalui http://localhost:3000.
+   - Mendukung hot reload.
+   - Digunakan saat proses pengembangan.
+
+4. **Apa perbedaan `npm run dev` dan `npm run build`?**  
+   - `npm run dev`:
+     - Untuk development.
+     - Hot reload aktif.
+     - Belum dioptimasi.
+   - `npm run build`:
+     - Untuk production.
+     - File dioptimasi dan diperkecil.
+     - Siap untuk deploy.
+
+
