@@ -4,8 +4,8 @@ import { useRouter } from "next/router"
 const halamanLogin = () => {
     const {push} = useRouter();
     const handlerLogin = () => {
-        // logic login disini
-        push('/produk');
+        localStorage.setItem("isLogin", "true")
+        push("/produk") //imperative navigation
     }
     return (
         <div>
