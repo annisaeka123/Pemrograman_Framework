@@ -2,7 +2,7 @@
 
 # JOBSHEET 2
 
-# ROUTING & LAYOUTING PADA NEXT.JS (PAGES ROUTER)
+# SETUP PROJECT NEXT.JS MENGGUNAKAN PAGES ROUTER
 
 ```
 Disusun oleh:
@@ -16,353 +16,177 @@ POLITEKNIK NEGERI MALANG
 2026
 ```
 
-## A. Dasar Konsep (Ringkas)
-- Folder pages/ → otomatis menjadi routing
-- index.tsx → root route (/)
-- Folder di dalam pages/ → nested route
-- File [param].tsx → dynamic routing
-- pages/_app.tsx → entry point global aplikasi
+## A. Langkah Kerja Praktikum
 
-## B. Langkah Praktikum
+### Langkah 1 – Pengecekan Lingkungan
 
-### 1. Routing Dasar (Static Routing)
-a. Struktur Awal
-```
-pages/
-└── index.tsx
-```
-b. Tambahkan Halaman About
+1. Buka terminal / command prompt.
+2. Jalankan perintah berikut:
+3. `node -v`
+    <img width="734" height="73" alt="image" src="https://github.com/user-attachments/assets/0c70e57d-d5ee-4cdf-b999-5f707b059d08" />
 
-  <img width="194" height="220" alt="image" src="https://github.com/user-attachments/assets/78f533a0-9f15-428a-a75d-fa8132353002" />
+4. `npm -v`
+    <img width="733" height="71" alt="image" src="https://github.com/user-attachments/assets/586be9e3-22a5-4210-9228-010fdd2216ce" />
 
+5. Pastikan Node.js dan npm sudah terinstal. Jika belum terinstall maka Install pada alamat berikut: https://nodejs.org/en/download
 
-c. Uji di Browser
-- [http://localhost:3000/about](http://localhost:3000/about)
+6. `git -v`
+    <img width="733" height="72" alt="image" src="https://github.com/user-attachments/assets/095f9cea-984e-4ae6-b429-9868b73df8cb" />
 
-    <img width="552" height="182" alt="image" src="https://github.com/user-attachments/assets/73420afe-fc7b-4bce-82a3-92d175d7ab48" />
+7. Jika belum install maka install pada alamat berikut: https://git-scm.com/install/windows
 
+### Langkah 2 – Membuat Project Next.js
 
-★ **Catatan:**
+1. Buat direktori baru dan masuk ke direktori kerja
+    <img width="764" height="87" alt="image" src="https://github.com/user-attachments/assets/84dbcb1d-b51f-40e3-a31c-99dcba1ec3b6" />
 
-Next.js otomatis membuat routing berdasarkan nama file tanpa konfigurasi tambahan.
+2. Jalankan perintah: `npx create-next-app@13.4.7`
+3. Masuk ke folder projectnya
+4. Tunggu hingga proses instalasi selesai.
 
+### Langkah 3 – Menjalankan Server Development
 
-### 2. Routing Menggunakan Folder
-a. Rapikan Struktur Pages
-    
-- Ubah struktur menjadi:
-```
-pages/
-└── about/
-    └── index.tsx ( yang sebelumnya about.tsx menjadi index.tsx )
-```
-  - Sebelum
+1. Masuk ke folder project:
+    <img width="820" height="68" alt="image" src="https://github.com/user-attachments/assets/30bf2a8d-af42-4a31-ae4f-88bbcf806dee" />
 
-    <img width="190" height="193" alt="image" src="https://github.com/user-attachments/assets/ed03e6b4-4f66-4687-8fe6-606383824ae4" />
+2. Jalankan aplikasi: `npm run dev`
+    <img width="859" height="340" alt="image" src="https://github.com/user-attachments/assets/ca4ebc3a-e4fe-4c19-82e4-26a60634e796" />
 
-  - Sesudah
+3. Buka browser dan akses: http://localhost:3000
+    <img width="673" height="830" alt="image" src="https://github.com/user-attachments/assets/d8631210-f652-411e-a980-0b94e6be4b68" />
 
-    <img width="211" height="223" alt="image" src="https://github.com/user-attachments/assets/b58e8a85-8aa0-44d0-9f4b-6d66ca731ee7" />
 
+### Langkah 4 – Mengenal Struktur Folder
 
-- Akses: /about
+- `pages/` → tempat routing halaman
 
-★ **Insight:** 
+  <img width="234" height="188" alt="image" src="https://github.com/user-attachments/assets/b8696e71-cbc7-4426-a82a-1035219357ee" />
 
-index.tsx di dalam folder mewakili root folder tersebut.
+- `public/` → aset statis
 
-b. Akses dari Halaman Browser ( tetap sama tetapi lebih rapi )
+  <img width="278" height="181" alt="image" src="https://github.com/user-attachments/assets/42315951-6336-47e5-a636-d1e090934724" />
 
-<img width="568" height="182" alt="image" src="https://github.com/user-attachments/assets/f411a5d2-b81d-440c-8f54-5207a736d97e" />
+- `styles/` → file CSS
 
-### 3. Nested Routing
-a. Buat Folder Setting
-```
-pages/
-└── setting/
-    ├── user.tsx
-    └── app.tsx
-```
+  <img width="414" height="227" alt="image" src="https://github.com/user-attachments/assets/9bee8d4f-75df-4c9c-ab4e-eb66e30e309f" />
 
-<img width="215" height="194" alt="image" src="https://github.com/user-attachments/assets/3f01cb4c-021e-482b-bf78-be3537b29860" />
+- `package.json` → konfigurasi project
 
-- Modifikasi kodenya
-  - user.tsx
+  <img width="474" height="619" alt="image" src="https://github.com/user-attachments/assets/cb9b32c2-3c1b-4102-ab2a-b47fcb78bdf8" />
 
-    <img width="430" height="264" alt="image" src="https://github.com/user-attachments/assets/822457c8-5db5-4e3e-9967-67c3f8154a99" />
+- `.gitignore` → file konfigurasi di Git yang berfungsi untuk memberitahu Git file atau folder apa saja yang TIDAK perlu di-track / di-commit ke repository.
 
-  - app.tsx
+  <img width="779" height="716" alt="image" src="https://github.com/user-attachments/assets/68c8fd1a-1545-48aa-aae4-62c561ce4b50" />
 
-    <img width="451" height="268" alt="image" src="https://github.com/user-attachments/assets/79f109ce-f46e-48c0-baee-d68bd3aaa4d0" />
 
-    Tips: Copy paste dari user.tsx , block Usersettingpage + Control+D maka saat merubah 
-usersettingpage menjadi Appsetting akan berubah semua tanpa harus rename satu-satu.
+### Langkah 5 – Modifikasi Halaman Utama
 
-- Akses:
-  - /setting/user
+1. Buka file: `pages/index.js`
+2. Ubah isi halaman:
+3. Simpan dan lihat perubahan di browser.
+    <img width="833" height="254" alt="image" src="https://github.com/user-attachments/assets/122c03ca-baba-44e3-8115-f0a5245a4bff" />
 
-    <img width="430" height="151" alt="image" src="https://github.com/user-attachments/assets/eed06d29-892f-49c2-99e4-053926de6641" />
+### Langkah 6 – Modifikasi API
 
-  - /setting/app
+1. Buka folder `api`
+<img width="259" height="176" alt="image" src="https://github.com/user-attachments/assets/46afa326-ffc7-4b73-a4be-aaa15a7abac2" />
 
-    <img width="395" height="146" alt="image" src="https://github.com/user-attachments/assets/094dd5ff-c351-4e79-8af5-8db5fc69ac3e" />
+2. Modifikasi `hello.ts`
+    <img width="883" height="409" alt="image" src="https://github.com/user-attachments/assets/649347a0-7c2d-4576-8c31-b065b8a2d647" />
 
-- Modifikasi struktur folder pages dengan menambahkan folder user dan user.tsx pada setting dipindah ke folder user dan rubah file user.tsx menjadi index.tsx
-    - Sebelum
+3. Jalankan browser dengan Alamat http://localhost:3000/api/hello
+    <img width="574" height="297" alt="image" src="https://github.com/user-attachments/assets/783bd967-2ddb-4e1e-8d69-d445d43b5a20" />
 
-      <img width="198" height="176" alt="image" src="https://github.com/user-attachments/assets/3742eb19-a983-4857-b5c3-656d9a7e534b" />
+4. Tambahkan extensions chrome
+    <img width="807" height="387" alt="image" src="https://github.com/user-attachments/assets/9dddadf0-c90f-4a31-afc9-59544dfcbf07" />
 
-    - Sesudah
+5. Jalankan browser chrome
+    <img width="812" height="185" alt="image" src="https://github.com/user-attachments/assets/f465cde8-801a-4021-9c30-2af74c19e4d2" />
 
-      <img width="201" height="193" alt="image" src="https://github.com/user-attachments/assets/7f7caa00-f0ec-48a2-aee2-8fc457b66150" />
 
-- Jalankan pada browser
+### Langkah 7 – Modifikasi Background
 
-  <img width="657" height="145" alt="image" src="https://github.com/user-attachments/assets/e20192a9-f415-4d3b-80f3-d83b315f04b2" />
+1. Buka file `_app.tsx`
 
-b. Nested Lebih Dalam
+   <img width="308" height="222" alt="image" src="https://github.com/user-attachments/assets/9e6b8c88-7fd5-485f-b771-fc34551e2e97" />
 
-<img width="194" height="247" alt="image" src="https://github.com/user-attachments/assets/9d9a4d61-5233-4b77-b0f4-3df09baa2cff" />
+2. Modifikasi menjadi berikut
 
-```
-pages/
-    └── user/
-        └── password/
-            └── index.tsx
-```
-- Akses: /setting/user/password
+   <img width="868" height="246" alt="image" src="https://github.com/user-attachments/assets/49073efe-c951-4a76-8f12-ff7725ff89d4" />
 
-  <img width="672" height="166" alt="image" src="https://github.com/user-attachments/assets/ab2c73e8-ee1b-4b1b-96c2-a9ed66ae8490" />
+3. Jalankan localhost
 
-★ **Keunggulan:** 
+   <img width="732" height="306" alt="image" src="https://github.com/user-attachments/assets/3f1b59ff-6dee-46f2-80e8-d7bda7d05708" />
 
-Tidak perlu konfigurasi manual seperti React Router atau Laravel Route.
 
-### 4. Dynamic Routing
-a. Buat Halaman Produk
-```
-└── produk/
-    ├── index.tsx
-    └── [id].tsx
-```
-- Modifikasi index.tsx
+### Langkah 8 – Setup ext pada VSCode (opsional)
 
-  <img width="445" height="258" alt="image" src="https://github.com/user-attachments/assets/764c3440-ef0b-4720-bb12-6c9c29c5cf87" />
+1. Auto Rename
 
-- Modifikasi [id].tsx
-  Buka browser [http://localhost:3000/produk/sepatu](http://localhost:3000/produk/sepatu) tambahkan segment sepatu.
+    <img width="621" height="192" alt="image" src="https://github.com/user-attachments/assets/acd5ac71-3b32-45d4-b24e-b9b938c6cc97" />
 
-  <img width="687" height="172" alt="image" src="https://github.com/user-attachments/assets/7ee05b78-f9e6-4288-a9c5-83f81981351f" />
+2. Console Ninja
 
-- Cek menggunakan console.log jika berhasil maka pada console.log dapat terlihat pada id terdapat nilai sepatu.
+     <img width="724" height="168" alt="image" src="https://github.com/user-attachments/assets/b3e73102-a4e4-4e35-bfc2-cc3074189c80" />
 
-  <img width="499" height="383" alt="image" src="https://github.com/user-attachments/assets/8460ac56-73d6-4df4-9964-cfdffc2f5c58" />
+3. Windsurf Plugin
 
+    <img width="704" height="173" alt="image" src="https://github.com/user-attachments/assets/9b65a9ad-2a05-4b63-9f32-49ecdcafe475" />
 
-★ **Catatan Penting:** 
 
-Pada console.log data langsung terlihat dikarenakan terdapat ext vscode console ninja.
+## B. Tugas Praktikum
 
-- Modifikasi [id].tsx agar dapat mengambil nilai dari id
+### Tugas 1
 
-  <img width="491" height="409" alt="image" src="https://github.com/user-attachments/assets/553fec2c-2dd8-49b9-a72a-f984633a4c35" />
+- Buat halaman baru `about.js` di folder `pages`.
+- Tampilkan:
+  - Nama Mahasiswa
+  - NIM
+  - Program Studi
 
-- Buka browser
+### Tugas 2
 
-  <img width="676" height="174" alt="image" src="https://github.com/user-attachments/assets/8ef60806-4242-48d7-8422-ce634e3f3a3a" />
+- Tambahkan minimal 1 link navigasi dari halaman utama ke halaman about.
 
+### Hasil
+- Halaman Utama
 
-b. Uji di Browser
-- /produk/sepatu-baru
+  <img width="765" height="348" alt="image" src="https://github.com/user-attachments/assets/6cf1fd41-b1b3-473e-995e-6e97a012cb06" />
 
-  <img width="686" height="176" alt="image" src="https://github.com/user-attachments/assets/d568fdbc-0983-4631-b2db-dc99b7ad3bb1" />
+- Halaman About
 
-- /produk/baju
+  <img width="663" height="427" alt="image" src="https://github.com/user-attachments/assets/f754e315-49f8-47d8-a195-d3dd82d45bb8" />
 
-  <img width="674" height="188" alt="image" src="https://github.com/user-attachments/assets/5fcf8107-d6b3-41f4-a0d3-39119956fd94" />
 
+## C. Pertanyaan Refleksi
 
-★ **Catatan Penting:** 
+1. **Mengapa Pages Router disebut sebagai routing berbasis file?**  
+   Pages Router disebut sebagai routing berbasis file karena sistem URL pada aplikasi ditentukan langsung dari struktur folder dan nama file di dalam folder pages.  
+   Setiap file yang dibuat di dalam folder pages otomatis menjadi sebuah route tanpa perlu konfigurasi tambahan.
+    <img width="842" height="339" alt="image" src="https://github.com/user-attachments/assets/489ed9a8-e415-4f6e-b5d9-14f150353017" />
 
-Nama file di dalam [ ] akan menjadi parameter URL.
+2. **Apa perbedaan Next.js dengan React standar (CRA)?**  
+   - Next.js mendukung SSR, SSG, dan CSR.
+   - Routing otomatis berbasis file.
+   - Lebih optimal untuk SEO.
+   - Mendukung API Routes.
+   - CRA hanya mendukung Client Side Rendering.
 
-### 5. Membuat Komponen Navbar
-a. Struktur Komponen
-```
-src/
-└── components/
-    └── layouts/
-        └── Navbar/
-            └── index.tsx
-```
+3. **Apa fungsi perintah `npm run dev`?**  
+   Perintah `npm run dev` digunakan untuk menjalankan project dalam mode development.  
+   - Menjalankan server lokal.
+   - Biasanya diakses melalui http://localhost:3000.
+   - Mendukung hot reload.
+   - Digunakan saat proses pengembangan.
 
-<img width="278" height="83" alt="image" src="https://github.com/user-attachments/assets/f6f78693-0d5b-4e4b-9143-e2b622685b4e" />
-
-- Modifikasi index.tsx
-
-  <img width="576" height="259" alt="image" src="https://github.com/user-attachments/assets/44d99574-6a0d-49f7-9e83-51f04686a3fe" />
-
-- Buka globals.css untuk nantinya digunakan pada style navbar
-
-  <img width="577" height="907" alt="image" src="https://github.com/user-attachments/assets/1579320f-0183-4fff-80b8-238dff67c9f2" />
-
-- Modifikasi index.tsx dengan menambahkan classname untuk style navbar
-
-  <img width="544" height="265" alt="image" src="https://github.com/user-attachments/assets/2d8ba30c-adba-451e-a134-bf2b8cac8baf" />
-
-- Modifikasi globals.css
-
-  <img width="380" height="241" alt="image" src="https://github.com/user-attachments/assets/cdc1ae73-6c54-45d7-a622-993be239c82a" />
-
-
-- Modifikasi index.tsx pada folder pages
-
-  <img width="591" height="456" alt="image" src="https://github.com/user-attachments/assets/24daffd3-970e-446b-940a-29f696b9893b" />
-
-- Modifikasi _app.tsx ( pastikan import styles dalam keadaan aktif)
-
-  <img width="596" height="194" alt="image" src="https://github.com/user-attachments/assets/c7a1d117-4645-4bda-9b99-d10f44e7c5d1" />
-
-- Jalankan di browser ( Navbar akan tampil )
-
-  <img width="685" height="322" alt="image" src="https://github.com/user-attachments/assets/fca70a96-cd2f-46eb-884c-6564aeca664e" />
-
-
-★ **Catatan Penting:** 
-
-navbar hanya akan muncul pada index page, pada page produk navbar tidak akan muncul. Contoh:
-
-<img width="516" height="185" alt="image" src="https://github.com/user-attachments/assets/126e2f0e-23c7-4959-9d44-2d40563bbf18" />
-
-
-- Modifikasi navbar agar tampil di semua page
-  - Modifikasi index.tsx pada folder page ( hapus navbar )
-
-    <img width="595" height="426" alt="image" src="https://github.com/user-attachments/assets/101b9940-c56d-4912-b5bc-949f64385b07" />
-
-  - Modifikasi _app.tsx ( Menambahkan navbar )
-
-    <img width="708" height="329" alt="image" src="https://github.com/user-attachments/assets/5ba147d4-221b-472e-90cb-a8b045fc83be" />
-
-- Jalankan Browser
-
-  <img width="722" height="310" alt="image" src="https://github.com/user-attachments/assets/cd35d71d-583c-4c86-8071-2cb24ca1ea64" />
-
-  <img width="685" height="229" alt="image" src="https://github.com/user-attachments/assets/651092cf-c8bf-4d34-8c80-6034476efc25" />
-
-  <img width="709" height="294" alt="image" src="https://github.com/user-attachments/assets/20625ff3-c153-4a8f-872c-a7bcdfb0fc44" />
-
-  <img width="717" height="263" alt="image" src="https://github.com/user-attachments/assets/437eecb9-082b-418b-af9f-c9b300d6fbb9" />
-
-
-### 6. Membuat Layout Global (App Shell)
-a. Buat AppShell
-```
-└── Appshell/
-    ├── Navbar (tetap)
-    └── Children (dinamis)
-```
-
-<img width="275" height="168" alt="image" src="https://github.com/user-attachments/assets/9afb664d-634b-424c-8e1d-29220ffb54f1" />
-
-- Modifikasi index.tsx pad AppShell
-
-  <img width="603" height="468" alt="image" src="https://github.com/user-attachments/assets/41e57324-9efb-4dbe-85f8-5a8db9b380ae" />
-
-
-### 7. Implementasi Layout di _app.tsx
-
-<img width="721" height="329" alt="image" src="https://github.com/user-attachments/assets/2c4d3ad9-621b-4d35-bfc4-1ed500b786d3" />
-
-Modifikasi pada Appshell/index.tsx, tambahkan footer seperti pada gambar dan amati hasilnya.
-
-<img width="579" height="561" alt="image" src="https://github.com/user-attachments/assets/84f3cad2-cd85-4799-ad7e-47279e44dbde" />
-
-
-- Hasil
-
-  Navbar dan layout muncul di semua halaman tanpa perlu dipanggil satu per satu.
-
-  <img width="687" height="289" alt="image" src="https://github.com/user-attachments/assets/d232a002-0704-4fe7-98ce-7f4ebb2f7c89" />
-
-  <img width="490" height="242" alt="image" src="https://github.com/user-attachments/assets/242928f0-42e6-449c-bb42-048def8460dd" />
-
-
-## C. Tugas Praktikum
-
-### Tugas 1 – Routing
-1. Buat halaman:
-   - /profile
-   - /profile/edit
-2. Pastikan routing berjalan tanpa error
-
-Hasil:
-
-<img width="190" height="114" alt="image" src="https://github.com/user-attachments/assets/991d60c1-97b8-42ed-bed9-2b00b6696df9" />
-
-- /profile
-
-  <img width="957" height="505" alt="image" src="https://github.com/user-attachments/assets/053f1f6e-88d7-443e-9cce-e7e68104ea07" />
-
-
-- /profile/edit
-
-  <img width="953" height="517" alt="image" src="https://github.com/user-attachments/assets/9674090e-177f-4746-80cf-62432e8e3479" />
-
-
-
-### Tugas 2 – Dynamic Routing
-1. Buat routing:
-2. /blog/[slug]
-3. Tampilkan nilai slug di halaman
-
-Hasil:
-
-<img width="180" height="169" alt="image" src="https://github.com/user-attachments/assets/3cce4990-d885-4316-ba07-6b360bea3e06" />
-
-- /blog
-
-  <img width="952" height="351" alt="image" src="https://github.com/user-attachments/assets/d8b3e873-c11b-4ce2-bbea-ba85dae06b51" />
-
-
-- /blog/pemrograman-framework
-
-  <img width="953" height="371" alt="image" src="https://github.com/user-attachments/assets/6446c04f-ff4d-443d-b093-b6dc7b56260d" />
-
-
-- /blog/pbf
-
-  <img width="954" height="352" alt="image" src="https://github.com/user-attachments/assets/c86c477e-607a-4d42-84f4-9117733cea12" />
-
-
-
-### Tugas 3 – Layout
-1. Tambahkan Footer pada AppShell
-2. Footer tampil di semua halaman
-
-Hasil:
-
-<img width="254" height="225" alt="image" src="https://github.com/user-attachments/assets/f13f3a85-38f9-4e8e-b14c-72678828bb12" />
-
-<img width="963" height="419" alt="image" src="https://github.com/user-attachments/assets/8d172b8e-e0bb-4916-a710-bc84ba3d38d1" />
-
-<img width="959" height="337" alt="image" src="https://github.com/user-attachments/assets/ec5b73f6-9fe3-4247-bbb3-7ab4043d2f62" />
-
-
-## D. Pertanyaan Refleksi
-1. Apa perbedaan routing berbasis file dan routing manual?  
-   Routing berbasis file adalah metode penentuan jalur (route) yang secara otomatis mengikuti struktur folder dan nama file dalam sebuah proyek. Artinya, setiap file yang dibuat di dalam folder tertentu secara langsung merepresentasikan sebuah URL tanpa perlu konfigurasi tambahan. Pendekatan ini biasanya membuat proses pengembangan menjadi lebih cepat dan sederhana karena developer tidak perlu menuliskan definisi route satu per satu. Sebaliknya, routing manual mengharuskan developer mendefinisikan setiap route secara eksplisit di dalam kode program. Pada metode ini, kita menentukan sendiri path URL dan komponen apa yang akan ditampilkan ketika path tersebut diakses. Routing manual memberikan fleksibilitas lebih tinggi untuk pengaturan logika navigasi yang kompleks, tetapi membutuhkan konfigurasi lebih banyak dan lebih rentan terhadap kesalahan jika tidak dikelola dengan baik.
-
-2. Mengapa dynamic routing penting dalam aplikasi web?  
-   Dynamic routing penting karena memungkinkan aplikasi web menangani banyak halaman dengan struktur yang sama tetapi data yang berbeda. Dalam aplikasi nyata seperti e-commerce, portal berita, atau sistem informasi, sering kali terdapat halaman detail yang bergantung pada parameter tertentu, seperti ID produk atau ID artikel. Dengan dynamic routing, kita cukup membuat satu template halaman yang dapat menerima parameter tersebut, sehingga tidak perlu membuat file terpisah untuk setiap data. Hal ini membuat aplikasi lebih efisien, mudah dikembangkan, dan lebih scalable ketika jumlah data terus bertambah. Selain itu, dynamic routing membantu menciptakan URL yang lebih terstruktur dan informatif, sehingga meningkatkan pengalaman pengguna dan mempermudah pengelolaan sistem secara keseluruhan.
-
-3. Apa keuntungan menggunakan layout global dibanding memanggil komponen satu per satu?  
-   Layout global memberikan keuntungan dalam hal efisiensi, konsistensi, dan kemudahan pemeliharaan kode. Dengan layout global, komponen yang digunakan secara berulang seperti header, navbar, sidebar, atau footer cukup didefinisikan sekali saja dan otomatis diterapkan ke seluruh halaman. Hal ini mengurangi duplikasi kode dan membuat struktur proyek lebih rapi. Jika terjadi perubahan pada salah satu bagian layout, developer hanya perlu memperbarui satu file tanpa harus mengedit setiap halaman secara manual. Selain itu, penggunaan layout global menjaga konsistensi tampilan dan pengalaman pengguna di seluruh aplikasi, sehingga aplikasi terlihat lebih profesional dan terstruktur dengan baik.
-
-## E. Kesimpulan
-Melalui praktikum ini, mahasiswa telah memahami bahwa **Next.js Pages Router** :
-- Menghemat waktu konfigurasi routing
-- Mendukung nested dan dynamic routing secara natural
-- Memudahkan pengelolaan layout global menggunakan _app.tsx
+4. **Apa perbedaan `npm run dev` dan `npm run build`?**
+   a. `npm run dev`:
+     - Untuk development.
+     - Hot reload aktif.
+     - Belum dioptimasi.
+   b. `npm run build`:
+     - Untuk production.
+     - File dioptimasi dan diperkecil.
+     - Siap untuk deploy.
 
 

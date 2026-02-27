@@ -2,7 +2,7 @@
 
 # JOBSHEET 3
 
-# CATCH-ALL ROUTING, OPTIONAL CATCH-ALL, LINKING & NAVIGATING PADA NEXT.JS PAGES ROUTER
+# ROUTING & LAYOUTING PADA NEXT.JS (PAGES ROUTER)
 
 ```
 Disusun oleh:
@@ -10,229 +10,359 @@ Nama: Annisa Eka Puspita
 Kelas: TI-3D
 Absen: 04
 NIM: 2341720131
-
 PRODI D-IV TEKNIK INFORMATIKA
 JURUSAN TEKNOLOGI INFORMASI
 POLITEKNIK NEGERI MALANG
 2026
 ```
 
-## A. Dasar Teori Singkat
+## A. Dasar Konsep (Ringkas)
+- Folder pages/ → otomatis menjadi routing
+- index.tsx → root route (/)
+- Folder di dalam pages/ → nested route
+- File [param].tsx → dynamic routing
+- pages/_app.tsx → entry point global aplikasi
 
-1. **Segment & Slug pada URL**
-   - URL dapat terdiri dari beberapa segmen, contoh: `/product/clothes/tops/t-shirt`
-   - Setiap bagian dipisahkan oleh `/` dan disebut segmen.
+## B. Langkah Praktikum
 
-2. **Catch-All Route**
-   - Next.js memungkinkan menangkap semua segmen URL menggunakan: `[...slug].js`
-   - Hasil parameter akan berbentuk array.
+### 1. Routing Dasar (Static Routing)
+a. Struktur Awal
+```
+pages/
+└── index.tsx
+```
+b. Tambahkan Halaman About
 
-3. **Optional Catch-All Route**
-   - Agar halaman tetap bisa diakses meskipun tanpa parameter: `[[...slug]].js`
-
-4. **Navigasi di Next.js**
-   - Deklaratif: Link dari `next/link`
-   - Imperatif: `router.push()` dari `next/router`
-## B. Langkah Kerja Praktikum
-
-### Langkah 1 - Menjalankan Project
-1. Buka folder project Next.js.
-2. Jalankan server: `npm run dev`
-3. Akses: [http://localhost:](http://localhost:)
-
-   <img width="979" height="289" alt="image" src="https://github.com/user-attachments/assets/ecf76d93-070b-4538-870e-5bfdda177eb1" />
+  <img width="194" height="220" alt="image" src="https://github.com/user-attachments/assets/78f533a0-9f15-428a-a75d-fa8132353002" />
 
 
-### Langkah 2 - Membuat Catch-All Route
-1. Masuk ke folder pages.
-2. Buat folder shop dan file `[...slug].tsx`.
-   
-   <img width="204" height="259" alt="image" src="https://github.com/user-attachments/assets/d9fc3cdd-bc8f-48e3-b46c-7448cbf53b53" />
+c. Uji di Browser
+- [http://localhost:3000/about](http://localhost:3000/about)
 
-3. Modifikasi Isi file `[...slug].tsx` dengan kode berikut:  
-
-   <img width="563" height="390" alt="image" src="https://github.com/user-attachments/assets/a211c362-42b1-4adb-8e2a-7d36479cf2ff" />
-
-   Cek menggunakan `console.log` apakah nilai segment berhasil didapat
-   
-   - Jalankan browser dan ketik urlnya sebagai berikut
-
-     <img width="956" height="327" alt="image" src="https://github.com/user-attachments/assets/2928361b-2271-484d-97cd-3a338e495980" />
-
-   - Cek Vscode jika pada `console.log` dapat menampilkan nilai querynya berarti berhasil
-
-     <img width="1613" height="420" alt="image" src="https://github.com/user-attachments/assets/38ce5d8c-4412-4b13-93bf-055eacdcab15" />
-     
-   - Modifikasi `[...slug].tsx` untuk menampilkan nilai query
-
-     <img width="1325" height="470" alt="image" src="https://github.com/user-attachments/assets/820e32eb-085f-4613-897f-823bc1cb812b" />
+    <img width="552" height="182" alt="image" src="https://github.com/user-attachments/assets/73420afe-fc7b-4bce-82a3-92d175d7ab48" />
 
 
-### Langkah 3 - Pengujian Catch-All Route 
-Akses URL berikut di browser:
-- `/shop/clothes`
+★ **Catatan:**
 
-  <img width="953" height="337" alt="image" src="https://github.com/user-attachments/assets/b85bd647-e8e1-4a60-a240-75c1a9f2b57a" />
-
-- `/shop/clothes/tops`
-
-  <img width="949" height="352" alt="image" src="https://github.com/user-attachments/assets/16b37684-b9f4-411c-a3dc-136dd9dfda7f" />
-
-- `/shop/clothes/tops/t-shirt`
-  <img width="952" height="359" alt="image" src="https://github.com/user-attachments/assets/0ad5643c-5a8d-41d2-9bac-8b4d13b3c44e" />
+Next.js otomatis membuat routing berdasarkan nama file tanpa konfigurasi tambahan.
 
 
-Jika dilihat ada yang terbaca undefined dan ada yang tidak terbaca ini dikarenakan segmennya dibatasi Cuma array[0] dan array[1]. Solusinya bagaimana?
+### 2. Routing Menggunakan Folder
+a. Rapikan Struktur Pages
+    
+- Ubah struktur menjadi:
+```
+pages/
+└── about/
+    └── index.tsx ( yang sebelumnya about.tsx menjadi index.tsx )
+```
+  - Sebelum
 
-Modifikasi `[...slug].tsx` menjadi berikut
+    <img width="190" height="193" alt="image" src="https://github.com/user-attachments/assets/ed03e6b4-4f66-4687-8fe6-606383824ae4" />
 
-<img width="1296" height="482" alt="image" src="https://github.com/user-attachments/assets/8d0e72e3-3f42-4996-b5fe-e652d3060fef" />
+  - Sesudah
 
-Jalankan browser: Berapapun banyaknya segment tetap terbaca  
-
-<img width="951" height="338" alt="image" src="https://github.com/user-attachments/assets/2566ba82-84d5-4924-ad37-ecd93907a98d" />
-
-<img width="948" height="344" alt="image" src="https://github.com/user-attachments/assets/ba3c5c6a-a8b9-49ed-90ff-5b4c28ec7eec" />
+    <img width="211" height="223" alt="image" src="https://github.com/user-attachments/assets/b58e8a85-8aa0-44d0-9f4b-6d66ca731ee7" />
 
 
-**Untuk saat ini gunakan**
+- Akses: /about
 
-<img width="1340" height="435" alt="image" src="https://github.com/user-attachments/assets/5c0f0c37-2341-4756-9b2a-8bda09b83335" />
+★ **Insight:** 
 
+index.tsx di dalam folder mewakili root folder tersebut.
 
-Perhatikan bahwa:
-- slug berbentuk array
-- Isi halaman berubah sesuai URL
+b. Akses dari Halaman Browser ( tetap sama tetapi lebih rapi )
 
-### Langkah 4 - Optional Catch-All Route
-1. Jika menggunakan `[...slug].js` maka ketika mengakses shop akan terjadi error
+<img width="568" height="182" alt="image" src="https://github.com/user-attachments/assets/f411a5d2-b81d-440c-8f54-5207a736d97e" />
 
-   <img width="954" height="711" alt="image" src="https://github.com/user-attachments/assets/654fc221-eecc-40ec-aca5-110a95fde400" />
-
-2. Solusinya dengan Rename file: `[...slug].js` → `[[...slug]].js`
-
-   <img width="184" height="256" alt="image" src="https://github.com/user-attachments/assets/bcb267e6-59a4-440f-8ae7-c863ec43a9d1" />
-
-3. Sekarang akses: `/shop`
-
-   <img width="955" height="357" alt="image" src="https://github.com/user-attachments/assets/8509441f-b1cc-44a2-a4e7-23512f08a472" />
-
-4. Halaman dapat diakses meskipun tanpa parameter.
-
-### Langkah 5 - Validasi Parameter
-Tambahkan validasi agar tidak error saat slug kosong:
-
-```html
-<p>
-Kategori: {slug ? slug[0] : "Semua Kategori"}
-</p>
+### 3. Nested Routing
+a. Buat Folder Setting
+```
+pages/
+└── setting/
+    ├── user.tsx
+    └── app.tsx
 ```
 
-<img width="872" height="575" alt="image" src="https://github.com/user-attachments/assets/95aee710-fd7c-4295-8a0a-e7739d6805d1" />
+<img width="215" height="194" alt="image" src="https://github.com/user-attachments/assets/3f01cb4c-021e-482b-bf78-be3537b29860" />
 
+- Modifikasi kodenya
+  - user.tsx
 
-<img width="955" height="374" alt="image" src="https://github.com/user-attachments/assets/b0ce482e-226a-4393-9bca-58d56326f168" />
+    <img width="430" height="264" alt="image" src="https://github.com/user-attachments/assets/822457c8-5db5-4e3e-9967-67c3f8154a99" />
 
+  - app.tsx
 
+    <img width="451" height="268" alt="image" src="https://github.com/user-attachments/assets/79f109ce-f46e-48c0-baee-d68bd3aaa4d0" />
 
-### Langkah 6 - Membuat Halaman Login & Register
-1. Buat folder: `pages/auth`
-2. Buat file:
-   - `login.jsx`
-   - `register.jsx`
-   
-   <img width="182" height="164" alt="image" src="https://github.com/user-attachments/assets/d7ed23e7-c8b7-441c-aeef-0c939e83f2a4" />
+    Tips: Copy paste dari user.tsx , block Usersettingpage + Control+D maka saat merubah 
+usersettingpage menjadi Appsetting akan berubah semua tanpa harus rename satu-satu.
 
-3. Modifikasi
-   - `login.jsx`:
+- Akses:
+  - /setting/user
 
-     <img width="722" height="331" alt="image" src="https://github.com/user-attachments/assets/475fdb76-8361-43cd-a4e3-add07a4c8c15" />
+    <img width="430" height="151" alt="image" src="https://github.com/user-attachments/assets/eed06d29-892f-49c2-99e4-053926de6641" />
 
-   - `register.jsx`:
+  - /setting/app
 
-     <img width="684" height="350" alt="image" src="https://github.com/user-attachments/assets/59d14359-11fa-4074-98ff-a3844425b952" />
+    <img width="395" height="146" alt="image" src="https://github.com/user-attachments/assets/094dd5ff-c351-4e79-8af5-8db5fc69ac3e" />
 
+- Modifikasi struktur folder pages dengan menambahkan folder user dan user.tsx pada setting dipindah ke folder user dan rubah file user.tsx menjadi index.tsx
+    - Sebelum
 
-### Langkah 7 - Navigasi Imperatif (router.push)
-1. Tambahkan button login:  
+      <img width="198" height="176" alt="image" src="https://github.com/user-attachments/assets/3742eb19-a983-4857-b5c3-656d9a7e534b" />
 
-   <img width="800" height="599" alt="image" src="https://github.com/user-attachments/assets/169a5b3c-5251-4dd7-a467-8df0294553e9" />
-   
-   | Kode | Cara Kerja | Kapan Dipanggil | Kelebihan | Kekurangan | Rekomendasi |
-   | :--- | :--- | :--- | :--- | :--- | :--- |
-   | `onClick={handlerLogin}` | Mengirim referensi fungsi ke event handler | Saat tombol diklik | Paling bersih, efisien, dan best practice | Tidak bisa kirim parameter langsung | **Sangat direkomendasikan** |
-   | `onClick={() => push('/produk')}` | Arrow function memanggil fungsi di dalamnya | Saat tombol diklik | Praktis untuk aksi sederhana | Kurang reusable jika logika bertambah | Direkomendasikan untuk navigasi sederhana |
-   | `onClick={() => handlerLogin()}` | Arrow function membungkus pemanggilan fungsi | Saat tombol diklik | Fleksibel untuk kirim parameter | Redundant jika tanpa parameter | Direkomendasikan hanya jika perlu argumen |
-   | `onClick={handlerLogin()}` | Fungsi langsung dieksekusi | Saat render | Tidak ada | Bug: fungsi tidak menunggu klik | **Tidak direkomendasikan** |
+    - Sesudah
 
-   Saat ini gunakan `onClick={() => handlerLogin()}`
+      <img width="201" height="193" alt="image" src="https://github.com/user-attachments/assets/7f7caa00-f0ec-48a2-aee2-8fc457b66150" />
 
-2. Klik tombol dan perhatikan perpindahan halaman tanpa reload.
-3. Jika di klik button login maka akan menuju `/produk`
+- Jalankan pada browser
 
-   <img width="955" height="423" alt="image" src="https://github.com/user-attachments/assets/5fdf0e59-a011-488c-968b-1a48145eeae1" />
+  <img width="657" height="145" alt="image" src="https://github.com/user-attachments/assets/e20192a9-f415-4d3b-80f3-d83b315f04b2" />
 
-   <img width="953" height="315" alt="image" src="https://github.com/user-attachments/assets/293df63f-adb9-418b-9dc5-3fe29db1919f" />
+b. Nested Lebih Dalam
 
-   <img width="956" height="349" alt="image" src="https://github.com/user-attachments/assets/60e8cf85-9d2f-4171-b15e-3e85772bbd89" />
+<img width="194" height="247" alt="image" src="https://github.com/user-attachments/assets/9d9a4d61-5233-4b77-b0f4-3df09baa2cff" />
 
 ```
-★ Note: - Pastikan code untuk redirect tidak aktif, jika aktif maka ketika masuk ke produk akan langsung redirect ke login
+pages/
+    └── user/
+        └── password/
+            └── index.tsx
+```
+- Akses: /setting/user/password
+
+  <img width="672" height="166" alt="image" src="https://github.com/user-attachments/assets/ab2c73e8-ee1b-4b1b-96c2-a9ed66ae8490" />
+
+★ **Keunggulan:** 
+
+Tidak perlu konfigurasi manual seperti React Router atau Laravel Route.
+
+### 4. Dynamic Routing
+a. Buat Halaman Produk
+```
+└── produk/
+    ├── index.tsx
+    └── [id].tsx
+```
+- Modifikasi index.tsx
+
+  <img width="445" height="258" alt="image" src="https://github.com/user-attachments/assets/764c3440-ef0b-4720-bb12-6c9c29c5cf87" />
+
+- Modifikasi [id].tsx
+  Buka browser [http://localhost:3000/produk/sepatu](http://localhost:3000/produk/sepatu) tambahkan segment sepatu.
+
+  <img width="687" height="172" alt="image" src="https://github.com/user-attachments/assets/7ee05b78-f9e6-4288-a9c5-83f81981351f" />
+
+- Cek menggunakan console.log jika berhasil maka pada console.log dapat terlihat pada id terdapat nilai sepatu.
+
+  <img width="499" height="383" alt="image" src="https://github.com/user-attachments/assets/8460ac56-73d6-4df4-9964-cfdffc2f5c58" />
+
+
+★ **Catatan Penting:** 
+
+Pada console.log data langsung terlihat dikarenakan terdapat ext vscode console ninja.
+
+- Modifikasi [id].tsx agar dapat mengambil nilai dari id
+
+  <img width="491" height="409" alt="image" src="https://github.com/user-attachments/assets/553fec2c-2dd8-49b9-a72a-f984633a4c35" />
+
+- Buka browser
+
+  <img width="676" height="174" alt="image" src="https://github.com/user-attachments/assets/8ef60806-4242-48d7-8422-ce634e3f3a3a" />
+
+
+b. Uji di Browser
+- /produk/sepatu-baru
+
+  <img width="686" height="176" alt="image" src="https://github.com/user-attachments/assets/d568fdbc-0983-4631-b2db-dc99b7ad3bb1" />
+
+- /produk/baju
+
+  <img width="674" height="188" alt="image" src="https://github.com/user-attachments/assets/5fcf8107-d6b3-41f4-a0d3-39119956fd94" />
+
+
+★ **Catatan Penting:** 
+
+Nama file di dalam [ ] akan menjadi parameter URL.
+
+### 5. Membuat Komponen Navbar
+a. Struktur Komponen
+```
+src/
+└── components/
+    └── layouts/
+        └── Navbar/
+            └── index.tsx
 ```
 
-### Langkah 8 - Simulasi Redirect (Belum Login)
-1. Di halaman product, pada `index.tsx` tambahkan beberapa code berikut:
+<img width="278" height="83" alt="image" src="https://github.com/user-attachments/assets/f6f78693-0d5b-4e4b-9143-e2b622685b4e" />
 
-   <img width="608" height="458" alt="image" src="https://github.com/user-attachments/assets/4c8179f5-e355-4221-a07c-dc014a7d76b2" />
+- Modifikasi index.tsx
 
-2. Jika Akses `/product` → otomatis diarahkan ke login.
+  <img width="576" height="259" alt="image" src="https://github.com/user-attachments/assets/44d99574-6a0d-49f7-9e83-51f04686a3fe" />
+
+- Buka globals.css untuk nantinya digunakan pada style navbar
+
+  <img width="577" height="907" alt="image" src="https://github.com/user-attachments/assets/1579320f-0183-4fff-80b8-238dff67c9f2" />
+
+- Modifikasi index.tsx dengan menambahkan classname untuk style navbar
+
+  <img width="544" height="265" alt="image" src="https://github.com/user-attachments/assets/2d8ba30c-adba-451e-a134-bf2b8cac8baf" />
+
+- Modifikasi globals.css
+
+  <img width="380" height="241" alt="image" src="https://github.com/user-attachments/assets/cdc1ae73-6c54-45d7-a622-993be239c82a" />
+
+
+- Modifikasi index.tsx pada folder pages
+
+  <img width="591" height="456" alt="image" src="https://github.com/user-attachments/assets/24daffd3-970e-446b-940a-29f696b9893b" />
+
+- Modifikasi _app.tsx ( pastikan import styles dalam keadaan aktif)
+
+  <img width="596" height="194" alt="image" src="https://github.com/user-attachments/assets/c7a1d117-4645-4bda-9b99-d10f44e7c5d1" />
+
+- Jalankan di browser ( Navbar akan tampil )
+
+  <img width="685" height="322" alt="image" src="https://github.com/user-attachments/assets/fca70a96-cd2f-46eb-884c-6564aeca664e" />
+
+
+★ **Catatan Penting:** 
+
+navbar hanya akan muncul pada index page, pada page produk navbar tidak akan muncul. Contoh:
+
+<img width="516" height="185" alt="image" src="https://github.com/user-attachments/assets/126e2f0e-23c7-4959-9d44-2d40563bbf18" />
+
+
+- Modifikasi navbar agar tampil di semua page
+  - Modifikasi index.tsx pada folder page ( hapus navbar )
+
+    <img width="595" height="426" alt="image" src="https://github.com/user-attachments/assets/101b9940-c56d-4912-b5bc-949f64385b07" />
+
+  - Modifikasi _app.tsx ( Menambahkan navbar )
+
+    <img width="708" height="329" alt="image" src="https://github.com/user-attachments/assets/5ba147d4-221b-472e-90cb-a8b045fc83be" />
+
+- Jalankan Browser
+
+  <img width="722" height="310" alt="image" src="https://github.com/user-attachments/assets/cd35d71d-583c-4c86-8071-2cb24ca1ea64" />
+
+  <img width="685" height="229" alt="image" src="https://github.com/user-attachments/assets/651092cf-c8bf-4d34-8c80-6034476efc25" />
+
+  <img width="709" height="294" alt="image" src="https://github.com/user-attachments/assets/20625ff3-c153-4a8f-872c-a7bcdfb0fc44" />
+
+  <img width="717" height="263" alt="image" src="https://github.com/user-attachments/assets/437eecb9-082b-418b-af9f-c9b300d6fbb9" />
+
+
+### 6. Membuat Layout Global (App Shell)
+a. Buat AppShell
+```
+└── Appshell/
+    ├── Navbar (tetap)
+    └── Children (dinamis)
+```
+
+<img width="275" height="168" alt="image" src="https://github.com/user-attachments/assets/9afb664d-634b-424c-8e1d-29220ffb54f1" />
+
+- Modifikasi index.tsx pad AppShell
+
+  <img width="603" height="468" alt="image" src="https://github.com/user-attachments/assets/41e57324-9efb-4dbe-85f8-5a8db9b380ae" />
+
+
+### 7. Implementasi Layout di _app.tsx
+
+<img width="721" height="329" alt="image" src="https://github.com/user-attachments/assets/2c4d3ad9-621b-4d35-bfc4-1ed500b786d3" />
+
+Modifikasi pada Appshell/index.tsx, tambahkan footer seperti pada gambar dan amati hasilnya.
+
+<img width="579" height="561" alt="image" src="https://github.com/user-attachments/assets/84f3cad2-cd85-4799-ad7e-47279e44dbde" />
+
+
+- Hasil
+
+  Navbar dan layout muncul di semua halaman tanpa perlu dipanggil satu per satu.
+
+  <img width="687" height="289" alt="image" src="https://github.com/user-attachments/assets/d232a002-0704-4fe7-98ce-7f4ebb2f7c89" />
+
+  <img width="490" height="242" alt="image" src="https://github.com/user-attachments/assets/242928f0-42e6-449c-bb42-048def8460dd" />
+
 
 ## C. Tugas Praktikum
 
-### Tugas 1
-- Buat catch-all route: `/category/[...slug].js`
-  
-- Tampilkan seluruh parameter URL dalam bentuk list.
+### Tugas 1 – Routing
+1. Buat halaman:
+   - /profile
+   - /profile/edit
+2. Pastikan routing berjalan tanpa error
+
+Hasil:
+
+<img width="190" height="114" alt="image" src="https://github.com/user-attachments/assets/991d60c1-97b8-42ed-bed9-2b00b6696df9" />
+
+- /profile
+
+  <img width="957" height="505" alt="image" src="https://github.com/user-attachments/assets/053f1f6e-88d7-443e-9cce-e7e68104ea07" />
 
 
-   <img width="849" height="716" alt="image" src="https://github.com/user-attachments/assets/79bd19e8-a1c1-4b2b-9221-16c5c763e13e" />
+- /profile/edit
 
-   <img width="956" height="441" alt="image" src="https://github.com/user-attachments/assets/6cd2f369-4297-44b1-9b02-a83852a5b162" />
-
-
-### Tugas 2
-- Buat navigasi:
-  - Login → Product (imperatif)
-  - Login ↔ Register (Link)
+  <img width="953" height="517" alt="image" src="https://github.com/user-attachments/assets/9674090e-177f-4746-80cf-62432e8e3479" />
 
 
-   <img width="860" height="586" alt="image" src="https://github.com/user-attachments/assets/63da5050-9acd-4c59-854b-0a364b5169ee" />
+
+### Tugas 2 – Dynamic Routing
+1. Buat routing:
+2. /blog/[slug]
+3. Tampilkan nilai slug di halaman
+
+Hasil:
+
+<img width="180" height="169" alt="image" src="https://github.com/user-attachments/assets/3cce4990-d885-4316-ba07-6b360bea3e06" />
+
+- /blog
+
+  <img width="952" height="351" alt="image" src="https://github.com/user-attachments/assets/d8b3e873-c11b-4ce2-bbea-ba85dae06b51" />
 
 
-   <img width="693" height="337" alt="image" src="https://github.com/user-attachments/assets/d2bde192-0a6e-45ed-ba68-f3b6c3b66741" />
+- /blog/pemrograman-framework
+
+  <img width="953" height="371" alt="image" src="https://github.com/user-attachments/assets/6446c04f-ff4d-443d-b093-b6dc7b56260d" />
 
 
-### Tugas 3 (Pengayaan)
-- Terapkan redirect otomatis ke login jika user belum login.
+- /blog/pbf
 
-   <img width="875" height="650" alt="image" src="https://github.com/user-attachments/assets/60bc8410-a05a-4693-bb3a-403ca5a01fba" />
+  <img width="954" height="352" alt="image" src="https://github.com/user-attachments/assets/c86c477e-607a-4d42-84f4-9117733cea12" />
 
+
+
+### Tugas 3 – Layout
+1. Tambahkan Footer pada AppShell
+2. Footer tampil di semua halaman
+
+Hasil:
+
+<img width="254" height="225" alt="image" src="https://github.com/user-attachments/assets/f13f3a85-38f9-4e8e-b14c-72678828bb12" />
+
+<img width="963" height="419" alt="image" src="https://github.com/user-attachments/assets/8d172b8e-e0bb-4916-a710-bc84ba3d38d1" />
+
+<img width="959" height="337" alt="image" src="https://github.com/user-attachments/assets/ec5b73f6-9fe3-4247-bbb3-7ab4043d2f62" />
 
 
 ## D. Pertanyaan Refleksi
-1. Apa perbedaan `[id].js` dan `[...slug].js`?
+1. Apa perbedaan routing berbasis file dan routing manual?  
+   Routing berbasis file adalah metode penentuan jalur (route) yang secara otomatis mengikuti struktur folder dan nama file dalam sebuah proyek. Artinya, setiap file yang dibuat di dalam folder tertentu secara langsung merepresentasikan sebuah URL tanpa perlu konfigurasi tambahan. Pendekatan ini biasanya membuat proses pengembangan menjadi lebih cepat dan sederhana karena developer tidak perlu menuliskan definisi route satu per satu. Sebaliknya, routing manual mengharuskan developer mendefinisikan setiap route secara eksplisit di dalam kode program. Pada metode ini, kita menentukan sendiri path URL dan komponen apa yang akan ditampilkan ketika path tersebut diakses. Routing manual memberikan fleksibilitas lebih tinggi untuk pengaturan logika navigasi yang kompleks, tetapi membutuhkan konfigurasi lebih banyak dan lebih rentan terhadap kesalahan jika tidak dikelola dengan baik.
 
-   Perbedaan antara [id].js dan [...slug].js terletak pada jumlah parameter yang dapat ditangkap dari URL. File [id].js digunakan untuk menangkap satu parameter dinamis saja. Misalnya jika terdapat route /produk/10, maka nilai id yang diterima adalah “10”. Route seperti ini biasanya digunakan ketika kita hanya membutuhkan satu data unik, seperti ID produk, ID user, atau ID artikel. Sedangkan [...slug].js adalah catch-all route yang dapat menangkap lebih dari satu segmen URL sekaligus. Misalnya pada URL /category/baju/pria/murah, maka semua bagian setelah /category akan ditangkap dalam satu variabel bernama slug. Jadi secara sederhana, [id] menangkap satu segmen, sedangkan [...slug] bisa menangkap banyak segmen.
+2. Mengapa dynamic routing penting dalam aplikasi web?  
+   Dynamic routing penting karena memungkinkan aplikasi web menangani banyak halaman dengan struktur yang sama tetapi data yang berbeda. Dalam aplikasi nyata seperti e-commerce, portal berita, atau sistem informasi, sering kali terdapat halaman detail yang bergantung pada parameter tertentu, seperti ID produk atau ID artikel. Dengan dynamic routing, kita cukup membuat satu template halaman yang dapat menerima parameter tersebut, sehingga tidak perlu membuat file terpisah untuk setiap data. Hal ini membuat aplikasi lebih efisien, mudah dikembangkan, dan lebih scalable ketika jumlah data terus bertambah. Selain itu, dynamic routing membantu menciptakan URL yang lebih terstruktur dan informatif, sehingga meningkatkan pengalaman pengguna dan mempermudah pengelolaan sistem secara keseluruhan.
 
-2. Mengapa slug berbentuk array?
+3. Apa keuntungan menggunakan layout global dibanding memanggil komponen satu per satu?  
+   Layout global memberikan keuntungan dalam hal efisiensi, konsistensi, dan kemudahan pemeliharaan kode. Dengan layout global, komponen yang digunakan secara berulang seperti header, navbar, sidebar, atau footer cukup didefinisikan sekali saja dan otomatis diterapkan ke seluruh halaman. Hal ini mengurangi duplikasi kode dan membuat struktur proyek lebih rapi. Jika terjadi perubahan pada salah satu bagian layout, developer hanya perlu memperbarui satu file tanpa harus mengedit setiap halaman secara manual. Selain itu, penggunaan layout global menjaga konsistensi tampilan dan pengalaman pengguna di seluruh aplikasi, sehingga aplikasi terlihat lebih profesional dan terstruktur dengan baik.
 
-   Slug berbentuk array karena pada catch-all route, URL bisa memiliki beberapa bagian yang dipisahkan oleh tanda garis miring (/). Setiap bagian tersebut dianggap sebagai satu segmen path. Agar semua segmen bisa disimpan dan diakses dengan mudah, Next.js menyimpannya dalam bentuk array. Dengan bentuk array, kita bisa mengambil setiap bagian secara terpisah, misalnya slug[0], slug[1], atau menggabungkannya kembali sesuai kebutuhan. Jika hanya berupa string tunggal, maka tidak akan bisa menangani struktur URL yang bertingkat.
+## E. Kesimpulan
+Melalui praktikum ini, mahasiswa telah memahami bahwa **Next.js Pages Router** :
+- Menghemat waktu konfigurasi routing
+- Mendukung nested dan dynamic routing secara natural
+- Memudahkan pengelolaan layout global menggunakan _app.tsx
 
-3. Kapan sebaiknya menggunakan Link dan `router.push()`?
-
-   Link sebaiknya digunakan ketika kita ingin melakukan navigasi biasa antar halaman tanpa adanya logika tambahan, seperti menu navigasi atau tombol pindah halaman sederhana. Komponen ini bersifat deklaratif karena kita langsung mendefinisikan tujuan halamannya di dalam JSX. Sedangkan router.push() digunakan ketika perpindahan halaman terjadi karena suatu aksi atau kondisi tertentu, misalnya setelah login berhasil, setelah submit form, atau setelah pengecekan validasi. router.push() bersifat imperatif karena kita memerintahkan perpindahan halaman melalui kode program.
-
-4. Mengapa navigasi Next.js tidak me-refresh halaman?
-
-   Navigasi Next.js tidak me-refresh halaman karena Next.js menggunakan konsep Single Page Application (SPA). Ketika berpindah halaman, browser tidak memuat ulang seluruh halaman dari awal seperti pada website tradisional. Sebaliknya, Next.js menggunakan client-side routing untuk mengganti komponen yang berubah tanpa melakukan reload penuh. Proses ini memanfaatkan JavaScript dan sistem rendering React, sehingga perpindahan halaman terasa lebih cepat, lebih halus, dan tidak menampilkan efek refresh ulang pada browser.
 
