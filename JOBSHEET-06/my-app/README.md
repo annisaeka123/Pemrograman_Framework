@@ -46,70 +46,123 @@ POLITEKNIK NEGERI MALANG
 
 **B. Langkah Praktikum**
 1. Menjalankan Project
-a. Buka folder project.
-b. Jalankan:
-c. npm run dev
-d. Akses:
-[http://localhost:](http://localhost:)
-e. Jika saat dirun ada kendala tampilan index lama tampil Uninstall
-package Tailwind
-- npm uninstall tailwindcss postcss autoprefixer
-- Hapus file config Tailwind
-- tailwind.config.js
-- postcss.config.js
+
+   a. Buka folder project.
+   b. Jalankan:
+       npm run dev
+
+   c. Akses:
+
+   d. Jika saat dirun ada kendala tampilan index lama tampil Uninstall package Tailwind
+      - npm uninstall tailwindcss postcss autoprefixer
+       <img width="871" height="200" alt="image" src="https://github.com/user-attachments/assets/6bcbfb52-5834-468e-acca-0d94d831b8ec" />
+
+      - Hapus file config Tailwind
+        
+        - tailwind.config.js
+        - postcss.config.js
 
 2. Membuat Custom Document
-● Masuk ke folder:
-● Modifikasi pada folder pages _document.js
-● Isi dengan kode berikut:
-● Periksa di Inspect Element bahwa atribut lang="id" sudah berubah.
+   - Masuk ke folder src
+   - Modifikasi pada folder pages _document.tsx
+   - Isi dengan kode berikut:
+     <img width="670" height="362" alt="image" src="https://github.com/user-attachments/assets/6528f863-20d0-4c5b-8635-9472920f921b" />
+
+      Periksa di Inspect Element bahwa atribut lang="id" sudah berubah.
 
 3. Pengaturan Title per Halaman
-a. Buka pages/index.js.
-b. Tambahkan:
-Refresh halaman dan perhatikan judul tab browser.
+
+   a. Buka pages/index.js.
+
+   b. Tambahkan:
+
+     <img width="706" height="546" alt="image" src="https://github.com/user-attachments/assets/bea431e2-60e3-4be5-be63-5ccc46d39c4a" />
+
+     Refresh halaman dan perhatikan judul tab browser.
+
+     <img width="955" height="577" alt="image" src="https://github.com/user-attachments/assets/2fe06ffd-c0d4-45c7-b8c4-a39ba5b848c9" />
+
 
 4. Membuat Custom Error Page (404)
 
-a. Di folder pages, buat file
+   a. Di folder pages, buat file
 
-- 404.tsx
-- Isi kode:
+   - 404.tsx
 
-b. Akses URL yang tidak ada, misalnya:
-- /dashboard
+     <img width="220" height="493" alt="image" src="https://github.com/user-attachments/assets/1975a1d1-fd03-43ae-9705-fa34b988f480" />
+
+   - Isi kode:
+
+     <img width="647" height="285" alt="image" src="https://github.com/user-attachments/assets/975a4f4b-b039-4900-a748-a1044a2dd774" />
+
+
+   b. Akses URL yang tidak ada, misalnya:
+   
+   - /dashboard
+
+     <img width="955" height="399" alt="image" src="https://github.com/user-attachments/assets/f69924ec-dd9c-4489-8e86-89d96e31cdc7" />
+
 
 5. Styling Halaman 404
 
-  a. Buat file:
+   a. Buat file:
+   - styles/404.module.scss
 
-  - styles/404.module.scss
-  - Tambahkan style:
-  - Modifikasi kode pada pages/404.tsx:
-  - Jalankan browser
-  - Jika dijalankan masih ada navbarnya , untuk itu lakukan Handling Navbar di Halaman 404
-  - Tambahkan `/404` pada disable navbar
-  - Jalankan browser
+     <img width="221" height="142" alt="image" src="https://github.com/user-attachments/assets/97ec037b-046f-4412-b94f-50354ecd3c57" />
+
+   - Tambahkan style:
+
+     <img width="490" height="309" alt="image" src="https://github.com/user-attachments/assets/5bf93b5e-f30a-413a-9cfe-95f410451941" />
+
+   - Modifikasi kode pada pages/404.tsx:
+
+     <img width="649" height="337" alt="image" src="https://github.com/user-attachments/assets/b5ac7757-822b-4f9e-8b1b-f01f3051a266" />
+
+   - Jalankan browser
+
+     <img width="956" height="943" alt="image" src="https://github.com/user-attachments/assets/85955d80-df92-4307-88f3-04d96fc42e71" />
+
+   - Jika dijalankan masih ada navbarnya , untuk itu lakukan Handling Navbar di Halaman 404
+       - Tambahkan `/404` pada disable navbar
+       
+           <img width="703" height="641" alt="image" src="https://github.com/user-attachments/assets/12f4d500-8650-495f-ac08-69b7ae472dbe" />
+ 
+   - Jalankan browser
+
+     <img width="946" height="937" alt="image" src="https://github.com/user-attachments/assets/67b50326-69fc-4605-bf95-69b9d2965f65" />
+
 
 6. Menampilkan Gambar dari Folder Public
+   a. Buka website https://undraw.co/ download png 404
+   - Cari 404 dan download png
 
-a. Buka website https://undraw.co/ download png 404
-- Cari 404 dan download png
-b. Simpan gambar not-found.png ke folder public/ dan rename agar
-memudahkan
-c. Modifikasi kode pada 404.tsx:
-- <img src="/page-not-found.png" alt="404"
-className={styles.error__image} />
-- Jalankan browser
+     <img width="942" height="803" alt="image" src="https://github.com/user-attachments/assets/0e71a0dc-79fe-410e-aed4-4ac47e997dc5" />
+
+   
+   b. Simpan gambar not-found.png ke folder public/ dan rename agar memudahkan
+
+     <img width="317" height="147" alt="image" src="https://github.com/user-attachments/assets/9b447e54-4996-4ea6-8472-5acc012caded" />
+
+
+   c. Modifikasi kode pada 404.tsx:
+   - `<img src="/page-not-found.png" alt="404" className={styles.error__image} />`
+
+     <img width="878" height="368" alt="image" src="https://github.com/user-attachments/assets/d6ac9fdf-96f7-4116-8e22-32ddc92cee57" />
+
+   - Jalankan browser
+
+     <img width="946" height="967" alt="image" src="https://github.com/user-attachments/assets/7dec915f-4bc0-40a5-af79-a4a5ce3050e6" />
+
 
 ---
 
 **C. Tugas Praktikum**
+
 Tugas 1 (Wajib)
 - Tambahkan:
-- Judul halaman
-- Deskripsi singkat
-- Gambar ilustrasi
+    - Judul halaman
+    - Deskripsi singkat
+    - Gambar ilustrasi
 
 Tugas 2 (Wajib)
 - Custom warna, font, dan layout halaman 404
@@ -117,25 +170,30 @@ Tugas 2 (Wajib)
 
 Tugas 3 (Pengayaan)
 - Tambahkan tombol:
-- “Kembali ke Home”
+    - “Kembali ke Home”
 - Gunakan navigasi Next.js (Link)
+
+Hasil:
+<img width="957" height="1014" alt="image" src="https://github.com/user-attachments/assets/31fe7e68-1b8c-4e9d-8848-edfe3694feb0" />
 
 ---
 
 **D. Pertanyaan Evaluasi**
 
-
 1. Apa fungsi utama _document.js?
-    _document.js di Next.js berfungsi untuk mengatur struktur dasar HTML dari
+
+   _document.js di Next.js berfungsi untuk mengatur struktur dasar HTML dari
     aplikasi secara keseluruhan. File ini digunakan untuk memodifikasi dokumen
-    HTML yang di-render di sisi server, seperti mengatur tag <html>, <head>, dan
-    <body>. Jadi, _document.js bekerja pada level paling luar dari halaman,
+    HTML yang di-render di sisi server, seperti mengatur tag `<html>`, `<head>`, dan
+    `<body>`. Jadi, _document.js bekerja pada level paling luar dari halaman,
     sebelum konten React dirender.
+    
     Secara default, Next.js sudah menyediakan struktur HTML dasar. Namun jika
     kita ingin menambahkan atribut khusus pada tag <html> (misalnya lang="id"),
     menambahkan script eksternal global, mengatur meta tag yang benar-benar
     global, atau menghubungkan font dari CDN yang berlaku untuk seluruh
     aplikasi, maka _document.js adalah tempat yang tepat.
+
     Yang penting dipahami adalah _document.js hanya dirender di server
     (server-side rendering). Artinya, file ini tidak memiliki akses ke event browser
     seperti onClick, tidak bisa menggunakan hook seperti useState atau useEffect,
@@ -143,17 +201,20 @@ Tugas 3 (Pengayaan)
     lebih fokus pada struktur dokumen, bukan logika interaktif.
 
 2. Mengapa <title> tidak disarankan di _document.js?
-    Tag <title> tidak disarankan diletakkan di _document.js karena judul halaman
+
+   Tag <title> tidak disarankan diletakkan di _document.js karena judul halaman
     biasanya bersifat dinamis dan berbeda untuk setiap halaman. _document.js
     hanya dirender sekali di server dan bersifat statis untuk seluruh aplikasi. Jika
     kita menaruh <title> di sana, maka semua halaman akan memiliki judul yang
     sama dan tidak bisa berubah sesuai konten halaman.
+
     Next.js sudah menyediakan komponen <Head> dari next/head yang bisa
     digunakan di setiap halaman secara terpisah. Dengan cara ini, setiap halaman
     dapat memiliki judul, meta description, dan meta tag SEO yang berbeda. Ini
     sangat penting untuk optimasi mesin pencari (SEO) dan pengalaman
     pengguna, karena judul tab browser akan menyesuaikan dengan halaman yang
     sedang dibuka.
+
     Selain itu, perubahan <title> harus bisa terjadi ketika user berpindah halaman
     tanpa reload penuh. Jika ditaruh di _document.js, perubahan tersebut tidak
     akan terjadi secara dinamis. Karena itu, praktik yang benar adalah
@@ -161,33 +222,36 @@ Tugas 3 (Pengayaan)
     _document.js.
 
 3. Apa perbedaan halaman biasa dan halaman 404.js?
-    Halaman biasa di Next.js adalah halaman yang dirender ketika user mengakses
+
+   Halaman biasa di Next.js adalah halaman yang dirender ketika user mengakses
     route yang memang tersedia, seperti /about, /produk, atau /login. Halaman ini
     dibuat berdasarkan struktur file di dalam folder pages. Setiap file akan
     otomatis menjadi route.
     
     Sedangkan 404.js adalah halaman khusus yang secara otomatis digunakan oleh
-Next.js ketika user mengakses route yang tidak ditemukan. Misalnya, jika user
-membuka /halaman-tidak-ada, maka Next.js akan menampilkan isi dari 404.js.
-Perbedaannya bukan hanya dari fungsi, tetapi juga dari perilaku sistem.
-Halaman biasa dirender karena route cocok dengan file yang ada, sedangkan
-404.js dirender karena tidak ada route yang cocok. Selain itu, halaman 404
-secara otomatis mengirimkan status HTTP 404 ke browser, yang menandakan
-bahwa halaman tidak ditemukan. Ini penting untuk SEO dan standar web.
-Jadi, halaman biasa bersifat eksplisit (dibuat untuk route tertentu), sementara
-404.js bersifat fallback otomatis ketika route tidak tersedia.
+    Next.js ketika user mengakses route yang tidak ditemukan. Misalnya, jika user
+    membuka /halaman-tidak-ada, maka Next.js akan menampilkan isi dari 404.js.
+    Perbedaannya bukan hanya dari fungsi, tetapi juga dari perilaku sistem.
+    Halaman biasa dirender karena route cocok dengan file yang ada, sedangkan
+    404.js dirender karena tidak ada route yang cocok. Selain itu, halaman 404
+    secara otomatis mengirimkan status HTTP 404 ke browser, yang menandakan
+    bahwa halaman tidak ditemukan. Ini penting untuk SEO dan standar web.
+    Jadi, halaman biasa bersifat eksplisit (dibuat untuk route tertentu), sementara
+    404.js bersifat fallback otomatis ketika route tidak tersedia.
 
 4. Mengapa folder public tidak perlu di-import?
     Folder public di Next.js memiliki perlakuan khusus. Semua file yang berada di
     dalam folder public akan otomatis bisa diakses langsung melalui URL tanpa
     perlu di-import ke dalam kode JavaScript atau TypeScript.
     Sebagai contoh, jika ada file gambar di:
-    `_public/images/logo.png_`
+
+    `public/page-not-found.png`
+
     Maka kita bisa langsung mengaksesnya di browser melalui:
     _[http://localhost:3000/images/logo.png](http://localhost:3000/images/logo.png)_
     atau menggunakannya di dalam <img> seperti ini:
-    <img src="/images/logo.png" />
-    Tanpa perlu menulis import logo from ....
+    `<img src="/images/logo.png" />`
+    Tanpa perlu menulis `import logo from ....`
     Hal ini berbeda dengan file yang berada di luar folder public, yang harus
     di-import terlebih dahulu jika ingin digunakan. Folder public diperlakukan
     seperti root statis server. Next.js secara otomatis menjadikannya sebagai
@@ -196,5 +260,4 @@ Jadi, halaman biasa bersifat eksplisit (dibuat untuk route tertentu), sementara
     gambar, favicon, file PDF, atau file lainnya yang tidak perlu diproses oleh
     JavaScript. Dengan sistem ini, performa lebih baik dan struktur proyek lebih
     rapi.
-
 
