@@ -22,16 +22,16 @@ const kategori = () => {
   }, [])
 
   return (
-  <div>
-    <h1>Daftar Produk</h1>
-    {products.map((product:ProductType) => (
-    <div key={product.id}>
-      <h2>{product.name}</h2>
-      <p>Harga: {product.price}</p>
-      <p>Ukuran: {product.size}</p>
+    <div style={{ maxWidth: "700px", margin: "40px auto" }}>
+      <h1 style={{ marginBottom: "20px" }}>Daftar Produk</h1>
+      {products.map((product:ProductType) => (
+        <div key={product.id} style={{ borderBottom: "1px solid #ccc", padding: "10px 0", marginBottom: "10px" }}>
+          <h3>{product.name}</h3>
+          <p>Harga: Rp {product.price}</p>
+          <p>Ukuran: {product.size}</p>
+        </div>
+      ))}
     </div>
-    ))}
-  </div>
   )
 }
 
