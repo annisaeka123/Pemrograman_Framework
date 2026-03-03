@@ -6,6 +6,7 @@ type ProductType = {
   price: number
   size: string
   category: string
+  image: string
 }
 
 const kategori = () => {
@@ -40,6 +41,7 @@ const kategori = () => {
           <p>Harga: Rp {product.price}</p>
           <p>Ukuran: {product.size}</p>
           <p>Kategori: {product.category}</p>
+          <img src={product.image} alt={product.name} style={{ maxWidth: "200px", marginTop: "10px" }} />
         </div>
       ))}
     </div>
