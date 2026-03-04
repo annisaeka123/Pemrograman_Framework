@@ -241,4 +241,23 @@ Sudah diimplemantaasikan pada praktikum bagian 4.
 
   <img width="796" height="520" alt="image" src="https://github.com/user-attachments/assets/498cb1b1-27a6-4625-be91-b55f2c221229" />
 
+---
+
+★ **Note Error** : 
+
+- Saat menjalankan http://localhost:3️000/produk/server produk tidak tampil
+
+  <img width="950" height="619" alt="image" src="https://github.com/user-attachments/assets/f1123591-3cb7-4c41-8c43-77ef02c4a1f0" />
+
+- Modifikasi pages/produk/[id].tsx
+
+  <img width="221" height="277" alt="image" src="https://github.com/user-attachments/assets/990738f7-d229-4c27-9e0b-98266f161a2b" />
+
+- Implementasikan swr:
+
+  <img width="834" height="629" alt="image" src="https://github.com/user-attachments/assets/61bb93df-62b3-4abe-8d39-017f6c84869f" />
+
+- Lalu jalankan kembali /produk/server
+
+  <img width="955" height="972" alt="image" src="https://github.com/user-attachments/assets/b8b383af-0014-4036-8491-b28d8c474577" />
 
