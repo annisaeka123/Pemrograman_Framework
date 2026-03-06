@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
-import TampilanProduk from "../views/produk"
+import TampilanProduk from "../../views/produk"
 import useSWR from "swr"
-import fetcher from "../utils/swr/fetcher"
+import fetcher from "../../utils/swr/fetcher"
 
 const HalamanProduk = () => {
     // const Router = useRouter()
