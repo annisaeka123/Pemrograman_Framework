@@ -34,6 +34,8 @@ const TampilanProduk = ({ products }: { products: ProductType[] }) => {
                   {products.price.toLocaleString("id-ID", {
                     style: "currency",
                     currency: "IDR",
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
                   })}
                 </p>
               </div>
