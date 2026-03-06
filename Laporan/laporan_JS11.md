@@ -40,44 +40,67 @@ Digunakan untuk:
 
 ### Bagian 1 – Membuat Dynamic Route
 
-1. Buka file pages/products/[product].tsx dan modfikasi sbb ( line 20 )
+1. Buka file src/views/produk/index.tsx dan modfikasi sbb
+
+    <img width="563" height="847" alt="image" src="https://github.com/user-attachments/assets/20de3b6f-15de-4cd2-92a8-457f28eb9351" />
+
 
 2. Jalankan browser [http://localhost:3000/produk](http://localhost:3000/produk)
 
+   <img width="944" height="961" alt="image" src="https://github.com/user-attachments/assets/759ccfc0-db11-4771-8d58-2e8ea799e24d" />
+
 - Jika kita klik salah satu gambar maka akan menuju halaman lain
+
+  <img width="951" height="841" alt="image" src="https://github.com/user-attachments/assets/b10d579f-3fa1-4a99-9171-80e794236856" />
+
 
 ### Bagian 2 – Implementasi CSR (Client Rendering)
 
-1. Modifikasi pada file [produk].tsx pada folder src/pages/produk/
+1. Modifikasi pada file [id].tsx pada folder src/pages/produk/
 
-2. Pada file produk.ts pada folder pages/api di rename menjadi [[...product]].ts Menjadi
+  <img width="902" height="560" alt="image" src="https://github.com/user-attachments/assets/fab1f8e3-93ca-4b79-9276-12aa9b40932e" />
 
-3. Modifikasi file servicefirebase.ts o Modifikasi file [[...produk]].ts
+2. Pada file produk.ts pada folder pages/api di rename menjadi [[...produk]].ts
 
-4. Jalankan browser
+  <img width="169" height="83" alt="image" src="https://github.com/user-attachments/assets/7e9c26e4-5be0-416d-bad7-6dd4eec9dcb7" />
+
+  Menjadi
+
+  <img width="199" height="81" alt="image" src="https://github.com/user-attachments/assets/9ab08b03-d042-4ba8-b453-e09345c3d29b" />
+
+
+3. Modifikasi file servicefirebase.ts
+
+  <img width="992" height="526" alt="image" src="https://github.com/user-attachments/assets/660bc772-dd4e-449b-91c8-2c85df8b70e3" />
+
+4. Modifikasi file [[...produk]].ts
+
+   <img width="946" height="690" alt="image" src="https://github.com/user-attachments/assets/08835e57-487b-4cbf-a172-eb35d781e3c4" />
+
+5. Jalankan browser
 [http://localhost:3000/api/produk/3FwB5UeuLVBpQy2umXHD](http://localhost:3000/api/produk/3FwB5UeuLVBpQy2umXHD)
 
-5. Jalankan alamat url [http://localhost:3000/api/produk/](http://localhost:3000/api/produk/)
+6. Jalankan alamat url [http://localhost:3000/api/produk/](http://localhost:3000/api/produk/)
 
-6. Buat file dengan nama index.tsx pada folder views/DetailProduct selain itu buat juga file dengan nama detailProduct.module.scss
+7. Buat file dengan nama index.tsx pada folder views/DetailProduct selain itu buat juga file dengan nama detailProduct.module.scss
 
-7. Modifikasi detailProduct.module.scss
+8. Modifikasi detailProduct.module.scss
 
-8. Modifikasi index.tsx pada folder DetailProduct
+9. Modifikasi index.tsx pada folder DetailProduct
 
-9. Modifikasi file [product].tsx
+10. Modifikasi file [product].tsx
 
-10. Modifikasi index.tsx pada folder views/detailProduct line 16
+11. Modifikasi index.tsx pada folder views/detailProduct line 16
 
-11. Jalankan browser [http://localhost:3000/produk/](http://localhost:3000/produk/) saat produk diklik maka akan
+12. Jalankan browser [http://localhost:3000/produk/](http://localhost:3000/produk/) saat produk diklik maka akan
 muncul detailProduk
 [http://localhost:3000/produk/pAWIT99SWmVbVrNm49ml](http://localhost:3000/produk/pAWIT99SWmVbVrNm49ml)
 
-12. Agar tulisan detail produk ditengah maka modifikasi file
+13. Agar tulisan detail produk ditengah maka modifikasi file
 detailProduct.module.scss line 103-108 dan file index.tsx tambahkan code
 pada line 7,8 dan 22 menjadi
 
-13. Sehingga hasilnya seperti berikut
+14. Sehingga hasilnya seperti berikut
 
 
 
