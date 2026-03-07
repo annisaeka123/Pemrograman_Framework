@@ -51,14 +51,15 @@ Digunakan untuk:
 
 - Jika kita klik salah satu gambar maka akan menuju halaman lain
 
-  <img width="951" height="841" alt="image" src="https://github.com/user-attachments/assets/b10d579f-3fa1-4a99-9171-80e794236856" />
+  <img width="680" height="258" alt="image" src="https://github.com/user-attachments/assets/100ea018-a134-4cd4-94e6-e92a1baffbf8" />
 
 
 ### Bagian 2 – Implementasi CSR (Client Rendering)
 
-1. Modifikasi pada file [id].tsx pada folder src/pages/produk/
+1. Modifikasi pada file [produk].tsx pada folder src/pages/produk/
 
-  <img width="902" height="560" alt="image" src="https://github.com/user-attachments/assets/fab1f8e3-93ca-4b79-9276-12aa9b40932e" />
+  <img width="921" height="485" alt="image" src="https://github.com/user-attachments/assets/625e69f3-dc62-4907-9da2-57420a4a2ffd" />
+
 
 2. Pada file produk.ts pada folder pages/api di rename menjadi [[...produk]].ts
 
@@ -71,46 +72,73 @@ Digunakan untuk:
 
 3. Modifikasi file servicefirebase.ts
 
-  <img width="992" height="526" alt="image" src="https://github.com/user-attachments/assets/660bc772-dd4e-449b-91c8-2c85df8b70e3" />
+  <img width="1007" height="543" alt="image" src="https://github.com/user-attachments/assets/897a80bb-2369-4f57-96ad-947b61b258f2" />
+
 
 4. Modifikasi file [[...produk]].ts
 
    <img width="946" height="690" alt="image" src="https://github.com/user-attachments/assets/08835e57-487b-4cbf-a172-eb35d781e3c4" />
 
-5. Jalankan browser
-[http://localhost:3000/api/produk/3FwB5UeuLVBpQy2umXHD](http://localhost:3000/api/produk/3FwB5UeuLVBpQy2umXHD)
+5. Jalankan browser http://localhost:3000/api/produk/MIJJ9oXRd9bRRoJrCVdI 
 
-6. Jalankan alamat url [http://localhost:3000/api/produk/](http://localhost:3000/api/produk/)
+<img width="941" height="427" alt="image" src="https://github.com/user-attachments/assets/7b09aa47-0c1a-411a-97f5-09d9d246f905" />
 
-7. Buat file dengan nama index.tsx pada folder views/DetailProduct selain itu buat juga file dengan nama detailProduct.module.scss
 
-8. Modifikasi detailProduct.module.scss
+7. Jalankan alamat url [http://localhost:3000/api/produk/](http://localhost:3000/api/produk/)
 
-9. Modifikasi index.tsx pada folder DetailProduct
+  <img width="949" height="277" alt="image" src="https://github.com/user-attachments/assets/794991f6-ec4a-4694-a4d5-5c6577cebfcb" />
 
-10. Modifikasi file [product].tsx
+8. Buat file dengan nama index.tsx pada folder views/DetailProduct selain itu buat juga file dengan nama detailProduct.module.scss
 
-11. Modifikasi index.tsx pada folder views/detailProduct line 16
+  <img width="330" height="141" alt="image" src="https://github.com/user-attachments/assets/0a39a398-24e7-46f5-aaea-58274b54ce2b" />
 
-12. Jalankan browser [http://localhost:3000/produk/](http://localhost:3000/produk/) saat produk diklik maka akan
+9. Modifikasi detailProduct.module.scss
+
+  <img width="332" height="833" alt="image" src="https://github.com/user-attachments/assets/de08cf7c-ddc9-4c7f-a52a-1b3e211a28df" />
+
+10. Modifikasi index.tsx pada folder DetailProduct
+
+  <img width="855" height="602" alt="image" src="https://github.com/user-attachments/assets/7446a951-93c5-4fc0-82b8-6547237cc9eb" />
+
+11. Modifikasi file [product].tsx
+
+  <img width="889" height="560" alt="image" src="https://github.com/user-attachments/assets/ac805cd8-e5a6-4dab-ba71-37c760e443bf" />
+
+12. Modifikasi index.tsx pada folder views/detailProduct line 16
+
+  <img width="841" height="647" alt="image" src="https://github.com/user-attachments/assets/062dc2a6-6750-4a0b-9fad-079c6936349a" />
+
+13. Jalankan browser [http://localhost:3000/produk/](http://localhost:3000/produk/) saat produk diklik maka akan
 muncul detailProduk
-[http://localhost:3000/produk/pAWIT99SWmVbVrNm49ml](http://localhost:3000/produk/pAWIT99SWmVbVrNm49ml)
+[http://localhost:3000/produk/MIJJ9oXRd9bRRoJrCVdI](http://localhost:3000/produk/MIJJ9oXRd9bRRoJrCVdI)
 
-13. Agar tulisan detail produk ditengah maka modifikasi file
-detailProduct.module.scss line 103-108 dan file index.tsx tambahkan code
-pada line 7,8 dan 22 menjadi
+  <img width="946" height="949" alt="image" src="https://github.com/user-attachments/assets/b58ef6cc-15cb-41cf-a6cc-88d3520d3555" />
 
-14. Sehingga hasilnya seperti berikut
+  <img width="947" height="970" alt="image" src="https://github.com/user-attachments/assets/a5003354-1020-4f69-aae3-e3e419321f73" />
 
+14. Agar tulisan detail produk ditengah maka modifikasi file detailProduct.module.scss line 73 dan file index.tsx tambahkan code pada line 7,8 dan 23 menjadi
+
+  <img width="699" height="289" alt="image" src="https://github.com/user-attachments/assets/19d080fa-4924-43de-8a50-d848a0bc3296" />
+
+  <img width="915" height="700" alt="image" src="https://github.com/user-attachments/assets/450a68a5-b527-4a7b-98d6-2b0291c3fe5b" />
+
+15. Sehingga hasilnya seperti berikut
+
+   <img width="950" height="953" alt="image" src="https://github.com/user-attachments/assets/52773101-034d-4f3b-83ec-29c1aca07060" />
 
 
 ### Bagian 3 – Implementasi SSR
 
-1. Modifikasi [produk].tsx pada folder src/pages/produk dan comment line 9
-    sampai 20 dikarena kita akan menggunakan metode SSR. Tambahkan
+1. Modifikasi [produk].tsx pada folder src/pages/produk dan comment beberapa code. Tambahkan
     beberapa kode untuk SSR
 
+   <img width="1012" height="757" alt="image" src="https://github.com/user-attachments/assets/43ea2108-4e14-4fb6-8a01-c59b55166306" />
+
 2. Jalankan browser [http://localhost:3000/produk/server](http://localhost:3000/produk/server)
+
+   <img width="952" height="950" alt="image" src="https://github.com/user-attachments/assets/3180375f-6bc0-4009-9cbf-63fda211c154" />
+
+   <img width="957" height="964" alt="image" src="https://github.com/user-attachments/assets/d0fbbe6c-1907-4e83-b5b1-842eed05d65b" />
 
 ★ Tidak perlu loading state karena data sudah tersedia sebelum render.
 
@@ -118,12 +146,21 @@ pada line 7,8 dan 22 menjadi
 
 1. Buka file [produk].tsx dan modifikasi seperti berikut
 
+   <img width="665" height="854" alt="image" src="https://github.com/user-attachments/assets/6d868d2e-ca15-4da4-846d-d41cab88bfa0" />
+
 2. Buka file index.tsx pada folder src/views/DetailProduct dan modifikasi pada
 line 11
 
+   <img width="908" height="733" alt="image" src="https://github.com/user-attachments/assets/4fd2c315-8a93-4168-8360-9f8611f59f8f" />
+
 3. Jalankan browser [http://localhost:3000/produk](http://localhost:3000/produk)
 
+   <img width="946" height="964" alt="image" src="https://github.com/user-attachments/assets/c89681f5-b9eb-49f2-a760-6513db2879f5" />
+
 4. Saat diklik salah satu produk
+
+   <img width="942" height="969" alt="image" src="https://github.com/user-attachments/assets/1987afb9-6c95-4196-960f-d4552c182932" />
+
 
 ---
 
@@ -137,6 +174,15 @@ line 11
 
     - Periksa Network → XHR → API request terlihat
 
+      <img width="908" height="703" alt="image" src="https://github.com/user-attachments/assets/5b7ae473-fa3d-4924-9ff5-d8799e3c57de" />
+
+      <img width="875" height="530" alt="image" src="https://github.com/user-attachments/assets/ff8c72fd-6ec9-4c01-affb-a15842e3d805" />
+
+      <img width="1919" height="963" alt="image" src="https://github.com/user-attachments/assets/9ff9b2dd-08e7-4fc0-9783-6b82dd1b2262" />
+
+
+
+
 - Uji 2 – SSR
 
     - Refresh halaman detail
@@ -145,43 +191,83 @@ line 11
 
     - Periksa Network → tidak terlihat fetch detail
 
+      <img width="1012" height="757" alt="image" src="https://github.com/user-attachments/assets/43ea2108-4e14-4fb6-8a01-c59b55166306" />
+      
+      <img width="1919" height="968" alt="image" src="https://github.com/user-attachments/assets/9735748a-8615-470f-b0d6-cef10d12aaba" />
+
+
+
 - Uji 3 – SSG
 
     a. Jalankan:
 
     - npm run build
 
+      <img width="806" height="790" alt="image" src="https://github.com/user-attachments/assets/0a5bbc5f-4836-4619-9f54-db55f0c470c5" />
+
+
     - npm run start
 
+      <img width="680" height="244" alt="image" src="https://github.com/user-attachments/assets/5960424d-c79d-47ae-aad4-9b45e98ab48c" />
+
+
     b. Tambahkan produk baru di database.
+
+     <img width="450" height="770" alt="image" src="https://github.com/user-attachments/assets/9d127cf2-c0b5-4870-bf79-34a4bf4a05d1" />
 
     c. Buka halaman detail produk baru:
 
     ★ Tidak muncul.
 
+     <img width="956" height="953" alt="image" src="https://github.com/user-attachments/assets/84da84ab-7ec8-4fda-8a37-90e5951234f7" />
+
+
     d. Build ulang:
 
     - npm run build
 
+      <img width="834" height="816" alt="image" src="https://github.com/user-attachments/assets/d61acf75-15ba-454f-ad3b-98a8add1a15c" />
+
+
     - npm run start
 
+      <img width="688" height="278" alt="image" src="https://github.com/user-attachments/assets/fa3f4744-e8ec-4249-922d-75663f0c4c13" />
+
+
     ★ Baru muncul.
+
+     <img width="956" height="972" alt="image" src="https://github.com/user-attachments/assets/1ee5f692-1d02-4997-8f47-e22b9745d4ab" />
+
+     <img width="951" height="958" alt="image" src="https://github.com/user-attachments/assets/ad17f551-ae37-42b4-9a3e-cd233754c5c5" />
+
+
 
 ---
 
 ## D. Tugas Praktikum
 
 1. Implementasikan halaman detail dengan:
-    - CSR
-    - SSR
-    - SSG
+    - CSR -> sudah diimplementasikan di praktikum bagian 2
+    - SSR -> sudah diimplementasikan di praktikum bagian 3
+    - SSG -> sudah diimplementasikan di praktikum bagian 4
+      
 
 2. Buat tabel perbandingan:
 
+  | Aspek              | CSR (Client-Side Rendering)                                       | SSR (Server-Side Rendering)                                   | SSG (Static Site Generation)                               |
+  | ------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------- |
+  | **Loading**        | Ada loading karena data diambil di browser setelah halaman render | Tidak ada loading, data sudah ada saat halaman dikirim server | Tidak ada loading karena halaman sudah menjadi HTML statis |
+  | **Build Required** | Tidak perlu build ulang saat data berubah                         | Tidak perlu build ulang                                       | Perlu build ulang (`npm run build`) jika ada data baru     |
+  | **SEO**            | Kurang baik karena data dimuat di client                          | Sangat baik karena HTML sudah berisi data dari server         | Sangat baik karena halaman sudah statis                    |
+  | **Perubahan Data** | Langsung terlihat saat data berubah                               | Langsung terlihat saat request halaman                        | Tidak langsung terlihat sampai dilakukan build ulang       |
+
+    
 3. Dokumentasikan:
     - Screenshot
     - Network tab
     - Build result
+
+   Dokumentasi lengkap sudah tersedia di bab Pengujian
 
 ---
 
