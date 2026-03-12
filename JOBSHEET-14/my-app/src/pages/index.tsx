@@ -14,8 +14,8 @@ export default function Home() {
         <title>Praktikum Next.js Pages Router</title>
       </head>
         <h1>Praktikum Next.js Pages Router</h1> <br />
-        <p>Annisa D4 Pengembangan Web</p>
-        <Link href="/about"><button>About Annisa</button></Link>
+        <p>Pengembangan Web</p>
+        <Link href="/about"><button>About</button></Link>
     </div>
   )
 }
