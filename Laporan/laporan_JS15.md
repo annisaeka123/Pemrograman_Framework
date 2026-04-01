@@ -84,18 +84,24 @@ bcrypt
 
 ### Bagian 1 – Membuat Register View
 
-```
-Buat folder pada views dengan nama register dan tambahkan 2 file yaitu index.tsx
-dan register.module.scss
-```
+- Buat folder pada views dengan nama register dan tambahkan 2 file yaitu index.tsx dan register.module.scss
 
-```
-Modifikasi file index.tsx (pada folder views/auth/register/index.tsx)
-```
+  <img width="227" height="167" alt="image" src="https://github.com/user-attachments/assets/54b5507e-0bd1-4bba-8745-1ab98da49545" />
+
+
+- Modifikasi file index.tsx (pada folder views/auth/register/index.tsx)
+
+  <img width="793" height="370" alt="image" src="https://github.com/user-attachments/assets/bc03b8ea-4f87-43e3-96a4-202eb2f88932" />
 
 - Buka file **register.tsx** pada folder **auth/register.tsx**
 
+  <img width="236" height="153" alt="image" src="https://github.com/user-attachments/assets/facc61bc-b225-42e4-b833-ce27feb2a6a1" />
+
+
 - Modifikasi file **register.tsx** (pada folder **pages/auth/register.tsx**)
+
+  <img width="639" height="358" alt="image" src="https://github.com/user-attachments/assets/b164ae85-a93a-4769-9231-953c50f4ee86" />
+
 
 - Modifikasi **register.module.scss**
 
