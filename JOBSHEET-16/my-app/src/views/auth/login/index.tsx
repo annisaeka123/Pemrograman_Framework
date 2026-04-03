@@ -54,13 +54,16 @@ const Tampilanlogin = () => {
                 setIsLoading(false)
                 push(callbackUrl)
             } else {
-                setIsLoading(false);
-                setError(res?.error || "Login failed");
+                setIsLoading(false)
+                if (res.error === "CredentialsSignin") {
+                    setError("Email atau password salah")
+                } else {
+                    setError("Terjadi kesalahan saat login")
+                }
             }
-            } catch (error) {
-            setIsLoading(false);
-            setError("wrong email or password");
-            }
+        } catch (error) {
+            setError("Server error / koneksi bermasalah")
+        }
     }
 
     return (    
