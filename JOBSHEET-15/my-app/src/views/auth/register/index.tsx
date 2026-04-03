@@ -84,6 +84,7 @@ const TampilanRegister = () => {
                             placeholder="Password" 
                             className={style.register__form__item__input}
                             required
+                            minLength={6}
                         />
                     </div>
 
