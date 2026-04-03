@@ -8,33 +8,36 @@ const TampilanRegister = () => {
     const { push } = useRouter()
     const [error, setError] = useState("")
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const form = event.currentTarget
-    const formData = new FormData(event.currentTarget)
-    const email = formData.get("email") as string
-    const fullname = formData.get("Fullname") as string
-    const password = formData.get("Password") as string
-    const response = await fetch("/api/register", {
-        method: "POST",
-        headers: {
-        "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, fullname, password }),
-    })
-    // const result = await response.json()
-    // console.log(result)
-    if (response.status === 200) {
-        form.reset()
-        // event.currentTarget.reset()
-        setIsLoading(false)
-        push("/auth/login")
-    } else {
-        setIsLoading(false)
-        setError(
-        response.status === 400 ? "User already exists" : "An error occurred",
-        )
+        setError("")
+        setIsLoading(true)
+        event.preventDefault()
+        const form = event.currentTarget
+        const formData = new FormData(event.currentTarget)
+        const email = formData.get("email") as string
+        const fullname = formData.get("Fullname") as string
+        const password = formData.get("Password") as string
+        const response = await fetch("/api/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, fullname, password }),
+        })
+        // const result = await response.json()
+        // console.log(result)
+        if (response.status === 200) {
+            form.reset()
+            // event.currentTarget.reset()
+            setIsLoading(false)
+            push("/auth/login")
+        } else {
+            setIsLoading(false)
+            setError(
+                response.status === 400 ? "Email already exists" : "An error occurred",
+            )
+        }
     }
-    }
+
     return (    
         <div className={style.register}>
             <h1 className={style.register__title}>Halaman Register</h1>
@@ -51,7 +54,9 @@ const TampilanRegister = () => {
                             name="email" 
                             placeholder="Email" 
                             className={style.register__form__item__input}
+                            required
                         />
+                        {error && <p className={style.register__error}>{error}</p>}
                     </div>
 
                     <div className={style.register__form__item}>
@@ -64,7 +69,8 @@ const TampilanRegister = () => {
                             name="Fullname" 
                             placeholder="Fullname" 
                             className={style.register__form__item__input}
-                        />
+                            required
+                        />   
                     </div>
 
                     <div className={style.register__form__item}>
@@ -77,11 +83,16 @@ const TampilanRegister = () => {
                             name="Password" 
                             placeholder="Password" 
                             className={style.register__form__item__input}
+                            required
                         />
                     </div>
 
-                    <button type="submit" className={style.register__form__button}>
-                        Register
+                    <button
+                        type="submit"
+                        className={style.register__form__button}
+                        disabled={isLoading}
+                    >
+                        {isLoading ? "Loading..." : "Register"}
                     </button>
                 </form>
                 <br />

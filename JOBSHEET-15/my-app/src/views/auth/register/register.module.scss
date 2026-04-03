@@ -47,7 +47,7 @@
 
         &:focus {
           outline: none;
-          border-color: #2a5298;
+          border-color: #d1d2d4;
           box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.2);
         }
       }
@@ -88,6 +88,13 @@
       }
     }
  }
+
+ &__error {
+    margin-top: 8px;
+    color: #ff4d4f;
+    font-size: 12px;
+  }
+
 }
 
 /* Animation */
