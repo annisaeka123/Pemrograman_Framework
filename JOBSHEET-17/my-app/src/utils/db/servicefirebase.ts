@@ -15,6 +15,7 @@ import bcrypt from "bcrypt"
 
 const db = getFirestore(app)
 
+// Produk =====
 export async function retrieveProducts(collectionName: string) {
   const snapshot = await getDocs(collection(db, collectionName))
   const data = snapshot.docs.map((doc) => ({
@@ -29,106 +30,91 @@ export async function retrieveDataByID(collectionName: string, id: string) {
   const data = snapshot.data()
   return data
 }
+// =========
 
+// Auth =====
 export async function signIn(email: string,) {
   const q = query(collection(db, "users"), where("email", "==", email))
   const querySnapshot = await getDocs(q)
-  const data = querySnapshot.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data(),
-  }))
-  if (data) {
-    return data[0]
-  } else {
-    return null
+  const snapshot = await getDocs(q)
+
+  if (snapshot.empty) return null
+  return {
+    id: snapshot.docs[0].id,
+    ...snapshot.docs[0].data(),
   }
 }
 
-export async function signUp(
-  userData: {
-    email: string
-    fullname: string
-    password: string
-    role?: string
-  },
-  callback: Function,
-) {
-  const q = query(
-    collection(db, "users"),
-    where("email", "==", userData.email),
-  );
-  const querySnapshot = await getDocs(q);
-  const data = querySnapshot.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data(),
-  }));
-  // console.log("Query result:", data);
-
- if (data.length > 0) {
-    // user belum ada → boleh daftar
-    // await addDoc(collection(db, "users"), userData);
-    // console.log("User registered:", data);
-    callback({
-      status: "error",
-      message: "User already exists",
-    })
-  } else {
-    userData.password = await bcrypt.hash(userData.password, 10);
-    userData.role = "member";
-    await addDoc(collection(db, "users"), userData)
-      .then(() => {
-        callback({
-          status: "success",
-          message: "User registered successfully",
-        })
-      })
-      .catch((error) => {
-        callback({
-          status: "error",
-          message: error.message,
-        })
-      }
+export async function signUp(userData: {
+  email: string
+  fullname: string
+  password: string
+  role?: string
+}) {
+    const q = query(
+      collection(db, "users"),
+      where("email", "==", userData.email),
     )
+
+    const snapshot = await getDocs(q)
+
+    if (!snapshot.empty) {
+      return {
+        status: false,
+        message: "User already exists",
+      }
+    }
+
+    userData.password = await bcrypt.hash(userData.password, 10)
+    userData.role = "member"
+
+    await addDoc(collection(db, "users"), userData)
+
+    return {
+    status: true,
+    message: "User registered successfully",
   }
 }
+// =========
 
-export async function signInWithGoogle(userData: any, callback: any) {
+// OAUTH (Google & GitHub) ======
+export async function signInWithOAuth(userData: any) {
   try {
     const q = query(
       collection(db, "users"),
       where("email", "==", userData.email),
-    );
+    )
 
-    const querySnapshot = await getDocs(q);
-    const data: any = querySnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
+    const snapshot = await getDocs(q)
 
-    if (data.length > 0) {
-      // User sudah ada, update data
-      userData.role = data[0].role;
-      await updateDoc(doc(db, "users", data[0].id), userData);
-      callback({
+    if (!snapshot.empty) {
+      const existingUser: any = {
+        id: snapshot.docs[0].id,
+        ...snapshot.docs[0].data(),
+      }
+
+      userData.role = existingUser.role
+
+      await updateDoc(doc(db, "users", existingUser.id), userData)
+
+      return {
         status: true,
-        message: "User registered and logged in with Google",
         data: userData,
-      });
+      }
     } else {
-      // User baru, tambah data
-      userData.role = "member";
-      await addDoc(collection(db, "users"), userData);
-      callback({
+      userData.role = "member"
+
+      await addDoc(collection(db, "users"), userData)
+
+      return {
         status: true,
-        message: "User registered and logged in with Google",
         data: userData,
-      });
+      }
     }
   } catch (error: any) {
-    // Tangani error di sini
-    callback({
+    return {
       status: false,
-      message: "Failed to register user with Google",
-    });
+      message: "Failed to login with OAuth",
+    }
   }
 }

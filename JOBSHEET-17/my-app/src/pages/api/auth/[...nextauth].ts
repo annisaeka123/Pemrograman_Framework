@@ -1,4 +1,4 @@
-import { signIn, signInWithGoogle } from "@/utils/db/servicefirebase"
+import { signIn, signInWithOAuth } from "@/utils/db/servicefirebase"
 import NextAuth, { NextAuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 import bcrypt from "bcrypt"
@@ -27,7 +27,7 @@ export const authOptions: NextAuthOptions = {
           const isPasswordValid = await bcrypt.compare(
             credentials.password,
             user.password,
-          );
+          )
           if (isPasswordValid) {
             // Pastikan mengembalikan object user yang bersih
             return {
@@ -35,7 +35,7 @@ export const authOptions: NextAuthOptions = {
               email: user.email,
               fullname: user.fullname,
               role: user.role,
-            };
+            }
           }
         }
         return null
@@ -61,48 +61,29 @@ export const authOptions: NextAuthOptions = {
         token.role = user.role
       }
 
-      // Jika login menggunakan Google, tambahkan informasi ke token
-      if (account?.provider === "google") {
+      // LOGIN GOOGLE & GITHUB
+      if (account?.provider === "google" || account?.provider === "github") {
         const data = {
           fullname: user.name,
-          email: user.email,
-          image: user.image,
-          type: account.provider
-        }
-        
-        await signInWithGoogle(data, (result: any) => {
-          // Pastikan mengecek result.status sesuai dengan object yang dikirim
-          if (result.status) {
-            token.fullname = result.data.fullname
-            token.email = result.data.email
-            token.image = result.data.image
-            token.type = result.data.type
-            token.role = result.data.role
-          }
-        })
-      }
-
-      if (account?.provider === "github") {
-        const data = {
-          fullname: user.name,
-          email: user.email,
+          email: user.email || `${user.name}@${account.provider}.com`, // fallback
           image: user.image,
           type: account.provider,
         }
 
-        await signInWithGoogle(data, (result: any) => {
-          if (result.status) {
-            token.fullname = result.data.fullname
-            token.email = result.data.email
-            token.image = result.data.image
-            token.type = result.data.type
-            token.role = result.data.role
-          }
-        })
+        const result: any = await signInWithOAuth(data)
+
+        if (result.status) {
+          token.fullname = result.data.fullname
+          token.email = result.data.email
+          token.image = result.data.image
+          token.type = result.data.type
+          token.role = result.data.role
+        }
       }
 
       return token
     },
+    
     async session({ session, token }:any) {
       if (token.email) {
         session.user.email = token.email
