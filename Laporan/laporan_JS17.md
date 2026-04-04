@@ -1,4 +1,4 @@
-# PEMROGRAMAN BERBASIS FRAMEWORK
+<img width="488" height="786" alt="image" src="https://github.com/user-attachments/assets/2a17d8f3-3adf-494c-a9e3-9a3af4605ca8" /># PEMROGRAMAN BERBASIS FRAMEWORK
 
 # JOBSHEET 17
 
@@ -255,9 +255,94 @@ Note: data akun google tidak tersimpan dalam database
 ## F. Tugas Mandiri
 
 1. Tambahkan role editor  
+
+    <img width="773" height="783" alt="image" src="https://github.com/user-attachments/assets/817871e9-906f-4687-b3d6-9c75dc685d02" />
+
+    <img width="1200" height="323" alt="image" src="https://github.com/user-attachments/assets/a0792436-02ed-4466-9069-35a81f733f2f" />
+
+    <img width="692" height="364" alt="image" src="https://github.com/user-attachments/assets/ffb23b86-78c7-4bce-9dba-5afa9f50ee2d" />
+
+
 2. Buat halaman khusus editor  
+
+    <img width="814" height="439" alt="image" src="https://github.com/user-attachments/assets/e8bb2de0-5c10-4ebd-97e6-07863b60d139" />
+
+    <img width="955" height="409" alt="image" src="https://github.com/user-attachments/assets/f24360c5-6e4e-42d9-a3d2-56441a6f69b5" />
+
+
 3. Tambahkan provider GitHub  
+
+    - Modifikasi pages/api/auth/[...nextauth].ts
+
+      <img width="760" height="168" alt="image" src="https://github.com/user-attachments/assets/a6187a1e-ce08-44a6-99f7-90b23a647b9d" />
+
+      <img width="756" height="349" alt="image" src="https://github.com/user-attachments/assets/adfd0a01-7dcd-4877-bf78-a56c00ac8723" />
+
+      <img width="556" height="802" alt="image" src="https://github.com/user-attachments/assets/3f052c40-3211-49cb-8a03-0f518118d876" />
+
+
+    - Ambil client ID & secret dari GitHub (https://github.com/settings/developers)
+
+      <img width="993" height="952" alt="image" src="https://github.com/user-attachments/assets/0ad7c2a2-8d72-4379-9862-2e63c9123f68" />
+
+      <img width="930" height="926" alt="image" src="https://github.com/user-attachments/assets/55ebf890-68aa-40fd-890e-658d80a983a6" />
+
+
+    - Copy client ID & secret dan masukan ke .env
+
+      <img width="256" height="52" alt="image" src="https://github.com/user-attachments/assets/f9fada64-8cb4-4c0b-a7e6-459e0046ba6c" />
+
+    - Tambah tombol Login dengan Github (index.tsx)
+
+      <img width="771" height="361" alt="image" src="https://github.com/user-attachments/assets/caf40bc3-8fd7-40df-b662-42f20bc60454" />
+
+    - Hasil
+  
+      <img width="697" height="694" alt="image" src="https://github.com/user-attachments/assets/21c12187-1833-483d-a91d-e63bf9c4f482" />
+
+      <img width="956" height="463" alt="image" src="https://github.com/user-attachments/assets/77ebe76e-ddb0-4f82-bea5-7cd1aa88355b" />
+
+      <img width="827" height="493" alt="image" src="https://github.com/user-attachments/assets/79beb413-80bc-4879-85d3-fc0f89736192" />
+
+
 4. Refactor service agar reusable  
+
+    Mengubah fungsi service agar tidak menggunakan callback, tetapi menggunakan return value, serta menyederhanakan struktur fungsi agar dapat digunakan kembali di berbagai bagian aplikasi seperti NextAuth, API, dan halaman frontend.
+
+    - Buat folder services
+
+      <img width="199" height="197" alt="image" src="https://github.com/user-attachments/assets/4ba26ac4-4403-4eb2-a102-ffe0e7d3a3eb" />
+
+      - authService.ts
+
+        <img width="544" height="875" alt="image" src="https://github.com/user-attachments/assets/0279234d-a1f2-4a5e-9a0e-0a927728556f" />
+
+        <img width="502" height="484" alt="image" src="https://github.com/user-attachments/assets/861015a3-41fa-4f8c-bfd1-1e88b4e0be59" />
+
+
+      - produkService.ts
+
+        <img width="599" height="310" alt="image" src="https://github.com/user-attachments/assets/327d0893-6c45-49ab-a329-bbcd2109b070" />
+
+    - Modifikasi servicefirebase.ts
+
+      <img width="497" height="885" alt="image" src="https://github.com/user-attachments/assets/ab3e5402-ca3f-4942-9170-792edab44bb8" />
+
+      <img width="471" height="898" alt="image" src="https://github.com/user-attachments/assets/838f633d-401c-40f7-83ed-98350652fbce" />
+
+
+
+    - Modifikasi [...nextauth].ts
+
+      <img width="534" height="871" alt="image" src="https://github.com/user-attachments/assets/fdd8ee2b-d247-4e16-8458-81fb4c3d5187" />
+
+      <img width="488" height="786" alt="image" src="https://github.com/user-attachments/assets/0e5b1999-9c80-458e-8991-9d45948353f1" />
+
+    - Modifikasi firebase.ts
+
+      <img width="729" height="568" alt="image" src="https://github.com/user-attachments/assets/62b74efe-0bb8-4fef-ab83-8c5a28988c0b" />
+
+
 5. Gunakan next/image untuk optimasi avatar  
 
 ---
