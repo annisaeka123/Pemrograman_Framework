@@ -1,7 +1,7 @@
 import { render,screen } from "@testing-library/react"
 import TampilanProduk from "@/pages/produk"
 
-jest.mock("next/router", () => ({
+jest.mock("next/navigation", () => ({
   useRouter() {
     return {
       route: "/product",

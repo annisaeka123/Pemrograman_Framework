@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 // import TampilanProduk from "../../views/produk"
 import useSWR from "swr"
 import fetcher from "../../utils/swr/fetcher"
-import { useRouter } from "next/dist/client/components/navigation"
+import { useRouter } from "next/navigation"
 import dynamic from "next/dynamic"
 
 const TampilanProduk = dynamic(() => import("../../views/produk"), {
