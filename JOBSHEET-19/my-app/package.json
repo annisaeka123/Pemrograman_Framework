@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --passWithNoTest -u",
+    "test": "jest --passWithNoTests -u",
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "jest --watchAll"
   },
@@ -31,6 +31,7 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@types/bcrypt": "^6.0.0",
+    "@types/jest": "^30.0.0",
     "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0",
     "sass": "^1.97.3"
