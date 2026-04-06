@@ -8,6 +8,13 @@ exports[`AboutPage renders the about page correctly 1`] = `
       <main
         class="className"
       >
+        <div>
+          <h1
+            data-testid="title"
+          >
+            About Page
+          </h1>
+        </div>
         <h1>
           About Annisa
         </h1>
@@ -29,6 +36,13 @@ exports[`AboutPage renders the about page correctly 1`] = `
     <main
       class="className"
     >
+      <div>
+        <h1
+          data-testid="title"
+        >
+          About Page
+        </h1>
+      </div>
       <h1>
         About Annisa
       </h1>
