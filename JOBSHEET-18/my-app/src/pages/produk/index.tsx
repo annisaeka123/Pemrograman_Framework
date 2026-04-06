@@ -7,7 +7,6 @@ import dynamic from "next/dynamic"
 
 const TampilanProduk = dynamic(() => import("../../views/produk"), {
   loading: () => <p>Loading produk...</p>,
-  ssr: false,
 })
 
 // const fetcher = (url: string) => fetch(url).then((res) => res.json())

@@ -1,16 +1,23 @@
 .produk {
   width: 100%;
-  padding: 0 5%;
+
+  min-height: 100vh;
+
   &__title {
     text-align: center;
     font-size: 32px;
-    font-weight: bold;
-    margin: 16px;
+    font-weight: 700;
+    margin: 24px;
   }
-  &__content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+&__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px); 
+  gap: 32px;
+  justify-content: center;
+  padding: 20px;
+    width: 100%;
+    max-width: 1400px; 
+    margin: 0 auto;
 
     &__skeleton {
         width: 200px;
@@ -52,11 +59,21 @@
     }
 
     &__item {
-        width: 200px;  
+        width: 200px;
+        background: #0f172a;
+        border-radius: 12px;
+        padding: 16px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }  
+
         &__image {
             margin-bottom: 12px;
             img {
-            width: 100%;
+            width: 200px;
             height: 200px;
             object-fit: cover;
             border-radius: 4px;
