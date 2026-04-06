@@ -1,4 +1,4 @@
-<img width="488" height="786" alt="image" src="https://github.com/user-attachments/assets/2a17d8f3-3adf-494c-a9e3-9a3af4605ca8" /># PEMROGRAMAN BERBASIS FRAMEWORK
+# PEMROGRAMAN BERBASIS FRAMEWORK
 
 # JOBSHEET 17
 
@@ -343,7 +343,19 @@ Note: data akun google tidak tersimpan dalam database
       <img width="729" height="568" alt="image" src="https://github.com/user-attachments/assets/62b74efe-0bb8-4fef-ab83-8c5a28988c0b" />
 
 
-5. Gunakan next/image untuk optimasi avatar  
+5. Gunakan next/image untuk optimasi avatar
+
+   <img width="954" height="969" alt="image" src="https://github.com/user-attachments/assets/03840beb-a3e9-4f66-ab79-097555474c72" />
+
+
+   - profile
+
+     <img width="594" height="803" alt="image" src="https://github.com/user-attachments/assets/0ddd0409-cd1d-4f44-a05d-4594b43f468f" />
+
+   - navbar
+
+     <img width="691" height="597" alt="image" src="https://github.com/user-attachments/assets/111770ed-e906-4f42-b729-356aca725626" />
+
 
 ---
 
