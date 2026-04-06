@@ -1,5 +1,6 @@
 import styles from "../../pages/produk/product.module.scss"
 import Link from "next/link"
+import Image from "next/image"
 
 type ProductType = {
   id: string
