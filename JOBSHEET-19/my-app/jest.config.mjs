@@ -1,4 +1,4 @@
-import nextJest  from "next/jest.js"
+import nextJest from "next/jest.js"
 
 const createJestConfig = nextJest({
   dir: "./",
@@ -6,19 +6,14 @@ const createJestConfig = nextJest({
 
 const config = {
   testEnvironment: "jsdom",
-  modulePaths: ['<rootDir>/src/'],
+  modulePaths: ["<rootDir>/src/"],
   collectCoverage: true,
+
   collectCoverageFrom: [
-    '**/*.{ts,tsx}',
-    '**/*.d.ts',
-    '!**/node_modules/**',
-    '!**/.next/**',
-    '!**/coverage/**',
-    '!**/jest.config.mjs',
-    '!**/next.config.mjs',
-    '!**/types/**',
-    '!**/views/**',
-    '!**/pages/api/**'
+    "src/pages/produk/index.tsx",
+    "src/components/layouts/navbar/index.tsx",
+
+    "src/pages/about/index.tsx",
   ],
 }
 

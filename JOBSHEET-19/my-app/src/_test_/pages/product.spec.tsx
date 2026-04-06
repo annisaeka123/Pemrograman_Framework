@@ -1,27 +1,32 @@
-import { render,screen } from "@testing-library/react"
-import TampilanProduk from "@/pages/produk"
+import { render, screen } from "@testing-library/react"
+import "@testing-library/jest-dom"
+import ProductPage from "@/pages/produk"
 
+// MOCK ROUTER
 jest.mock("next/navigation", () => ({
   useRouter() {
     return {
-      route: "/product",
-      pathname: "",
+      route: "/produk",
+      pathname: "/produk",
       query: {},
-      asPath: "",
-      push: jest.fn(),
-      event: {
-        on: jest.fn(),
-        off: jest.fn(),
-      },
-      isReady: true,
+      asPath: "/produk",
     }
   },
 }))
 
 describe("Product Page", () => {
-  it("renders product page correctly", () => {
-    const page = render(<TampilanProduk />)
-    // expect(screen.getByTestId("title").textContent).toBe("Product Page")
-    expect(page).toMatchSnapshot()
+  
+  it("should render product page title", () => {
+    render(<ProductPage />)
+
+    const title = screen.getByTestId("title")
+    expect(title).toBeInTheDocument()
+    expect(title.textContent).toBe("Product Page") // toBe()
   })
+
+  it("should match snapshot", () => {
+    const { asFragment } = render(<ProductPage />)
+    expect(asFragment()).toMatchSnapshot() // snapshot
+  })
+
 })
