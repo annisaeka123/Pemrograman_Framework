@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react"
-import TampilanProduk from "../../views/produk"
+// import TampilanProduk from "../../views/produk"
 import useSWR from "swr"
 import fetcher from "../../utils/swr/fetcher"
 import { useRouter } from "next/dist/client/components/navigation"
+import dynamic from "next/dynamic"
+
+const TampilanProduk = dynamic(() => import("../../views/produk"), {
+  loading: () => <p>Loading produk...</p>,
+  ssr: false,
+})
 
 // const fetcher = (url: string) => fetch(url).then((res) => res.json())
 const kategori = () => {

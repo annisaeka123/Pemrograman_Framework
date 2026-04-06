@@ -18,6 +18,16 @@ const nextConfig = {
         hostname: "assets.adidas.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.static-src.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "d2kchovjbwl1tk.cloudfront.net",
+        pathname: "/**",
+      },
     ],
   },
 }
