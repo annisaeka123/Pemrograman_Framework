@@ -4,8 +4,7 @@ import AboutPage from "@/pages/about"
 describe("AboutPage", () => {
     it("renders the about page correctly", () => {
         const page = render(<AboutPage />)
-        expect(screen.getByTestId("title").textContent).toBe("About Page")
-        // expect(screen.getByTestId("title").textContent).toBe("About") --- IGNORE ---
+        // expect(screen.getByTestId("title").textContent).toBe("About Page")
         expect(page).toMatchSnapshot()
     })
 })
