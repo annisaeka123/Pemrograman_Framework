@@ -26,8 +26,8 @@ const Navbar = () => {
               <Image
                 src={data.user?.image || "/default-avatar.png"}
                 alt={data.user?.fullname || "User Avatar"}
-                width={32}
-                height={32}
+                width={50}
+                height={50}
                 className={styles.navbar__user__image}
               />
             </div>
